@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5E19CCC920573A0D00AF5BBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19CCC820573A0D00AF5BBF /* AppDelegate.swift */; };
+		5E19CCCB20573A0D00AF5BBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19CCCA20573A0D00AF5BBF /* ViewController.swift */; };
+		5E19CCCE20573A0D00AF5BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E19CCCC20573A0D00AF5BBF /* Main.storyboard */; };
+		5E19CCD120573A0D00AF5BBF /* Ruka.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E19CCCF20573A0D00AF5BBF /* Ruka.xcdatamodeld */; };
+		5E19CCD320573A0D00AF5BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E19CCD220573A0D00AF5BBF /* Assets.xcassets */; };
+		5E19CCD620573A0D00AF5BBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E19CCD420573A0D00AF5BBF /* LaunchScreen.storyboard */; };
+		5E19CCE120573A0D00AF5BBF /* RukaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19CCE020573A0D00AF5BBF /* RukaTests.swift */; };
+		5E19CCEC20573A0D00AF5BBF /* RukaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19CCEB20573A0D00AF5BBF /* RukaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5E19CCDD20573A0D00AF5BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E19CCBD20573A0C00AF5BBF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E19CCC420573A0D00AF5BBF;
+			remoteInfo = Ruka;
+		};
+		5E19CCE820573A0D00AF5BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E19CCBD20573A0C00AF5BBF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E19CCC420573A0D00AF5BBF;
+			remoteInfo = Ruka;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5E19CCC520573A0D00AF5BBF /* Ruka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruka.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E19CCC820573A0D00AF5BBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5E19CCCA20573A0D00AF5BBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5E19CCCD20573A0D00AF5BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5E19CCD020573A0D00AF5BBF /* Ruka.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ruka.xcdatamodel; sourceTree = "<group>"; };
+		5E19CCD220573A0D00AF5BBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5E19CCD520573A0D00AF5BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5E19CCD720573A0D00AF5BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E19CCDC20573A0D00AF5BBF /* RukaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RukaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E19CCE020573A0D00AF5BBF /* RukaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RukaTests.swift; sourceTree = "<group>"; };
+		5E19CCE220573A0D00AF5BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E19CCE720573A0D00AF5BBF /* RukaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RukaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E19CCEB20573A0D00AF5BBF /* RukaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RukaUITests.swift; sourceTree = "<group>"; };
+		5E19CCED20573A0D00AF5BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5E19CCC220573A0D00AF5BBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E19CCD920573A0D00AF5BBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E19CCE420573A0D00AF5BBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5E19CCBC20573A0C00AF5BBF = {
+			isa = PBXGroup;
+			children = (
+				5E19CCC720573A0D00AF5BBF /* Ruka */,
+				5E19CCDF20573A0D00AF5BBF /* RukaTests */,
+				5E19CCEA20573A0D00AF5BBF /* RukaUITests */,
+				5E19CCC620573A0D00AF5BBF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5E19CCC620573A0D00AF5BBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E19CCC520573A0D00AF5BBF /* Ruka.app */,
+				5E19CCDC20573A0D00AF5BBF /* RukaTests.xctest */,
+				5E19CCE720573A0D00AF5BBF /* RukaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5E19CCC720573A0D00AF5BBF /* Ruka */ = {
+			isa = PBXGroup;
+			children = (
+				5E19CCC820573A0D00AF5BBF /* AppDelegate.swift */,
+				5E19CCCA20573A0D00AF5BBF /* ViewController.swift */,
+				5E19CCCC20573A0D00AF5BBF /* Main.storyboard */,
+				5E19CCD220573A0D00AF5BBF /* Assets.xcassets */,
+				5E19CCD420573A0D00AF5BBF /* LaunchScreen.storyboard */,
+				5E19CCD720573A0D00AF5BBF /* Info.plist */,
+				5E19CCCF20573A0D00AF5BBF /* Ruka.xcdatamodeld */,
+			);
+			path = Ruka;
+			sourceTree = "<group>";
+		};
+		5E19CCDF20573A0D00AF5BBF /* RukaTests */ = {
+			isa = PBXGroup;
+			children = (
+				5E19CCE020573A0D00AF5BBF /* RukaTests.swift */,
+				5E19CCE220573A0D00AF5BBF /* Info.plist */,
+			);
+			path = RukaTests;
+			sourceTree = "<group>";
+		};
+		5E19CCEA20573A0D00AF5BBF /* RukaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5E19CCEB20573A0D00AF5BBF /* RukaUITests.swift */,
+				5E19CCED20573A0D00AF5BBF /* Info.plist */,
+			);
+			path = RukaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5E19CCC420573A0D00AF5BBF /* Ruka */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E19CCF020573A0D00AF5BBF /* Build configuration list for PBXNativeTarget "Ruka" */;
+			buildPhases = (
+				5E19CCC120573A0D00AF5BBF /* Sources */,
+				5E19CCC220573A0D00AF5BBF /* Frameworks */,
+				5E19CCC320573A0D00AF5BBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ruka;
+			productName = Ruka;
+			productReference = 5E19CCC520573A0D00AF5BBF /* Ruka.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5E19CCDB20573A0D00AF5BBF /* RukaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E19CCF320573A0D00AF5BBF /* Build configuration list for PBXNativeTarget "RukaTests" */;
+			buildPhases = (
+				5E19CCD820573A0D00AF5BBF /* Sources */,
+				5E19CCD920573A0D00AF5BBF /* Frameworks */,
+				5E19CCDA20573A0D00AF5BBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E19CCDE20573A0D00AF5BBF /* PBXTargetDependency */,
+			);
+			name = RukaTests;
+			productName = RukaTests;
+			productReference = 5E19CCDC20573A0D00AF5BBF /* RukaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5E19CCE620573A0D00AF5BBF /* RukaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E19CCF620573A0D00AF5BBF /* Build configuration list for PBXNativeTarget "RukaUITests" */;
+			buildPhases = (
+				5E19CCE320573A0D00AF5BBF /* Sources */,
+				5E19CCE420573A0D00AF5BBF /* Frameworks */,
+				5E19CCE520573A0D00AF5BBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E19CCE920573A0D00AF5BBF /* PBXTargetDependency */,
+			);
+			name = RukaUITests;
+			productName = RukaUITests;
+			productReference = 5E19CCE720573A0D00AF5BBF /* RukaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5E19CCBD20573A0C00AF5BBF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "george kapoya";
+				TargetAttributes = {
+					5E19CCC420573A0D00AF5BBF = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					5E19CCDB20573A0D00AF5BBF = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5E19CCC420573A0D00AF5BBF;
+					};
+					5E19CCE620573A0D00AF5BBF = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5E19CCC420573A0D00AF5BBF;
+					};
+				};
+			};
+			buildConfigurationList = 5E19CCC020573A0C00AF5BBF /* Build configuration list for PBXProject "Ruka" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5E19CCBC20573A0C00AF5BBF;
+			productRefGroup = 5E19CCC620573A0D00AF5BBF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5E19CCC420573A0D00AF5BBF /* Ruka */,
+				5E19CCDB20573A0D00AF5BBF /* RukaTests */,
+				5E19CCE620573A0D00AF5BBF /* RukaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5E19CCC320573A0D00AF5BBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E19CCD620573A0D00AF5BBF /* LaunchScreen.storyboard in Resources */,
+				5E19CCD320573A0D00AF5BBF /* Assets.xcassets in Resources */,
+				5E19CCCE20573A0D00AF5BBF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E19CCDA20573A0D00AF5BBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E19CCE520573A0D00AF5BBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5E19CCC120573A0D00AF5BBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E19CCCB20573A0D00AF5BBF /* ViewController.swift in Sources */,
+				5E19CCD120573A0D00AF5BBF /* Ruka.xcdatamodeld in Sources */,
+				5E19CCC920573A0D00AF5BBF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E19CCD820573A0D00AF5BBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E19CCE120573A0D00AF5BBF /* RukaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E19CCE320573A0D00AF5BBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E19CCEC20573A0D00AF5BBF /* RukaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E19CCDE20573A0D00AF5BBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E19CCC420573A0D00AF5BBF /* Ruka */;
+			targetProxy = 5E19CCDD20573A0D00AF5BBF /* PBXContainerItemProxy */;
+		};
+		5E19CCE920573A0D00AF5BBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E19CCC420573A0D00AF5BBF /* Ruka */;
+			targetProxy = 5E19CCE820573A0D00AF5BBF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5E19CCCC20573A0D00AF5BBF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E19CCCD20573A0D00AF5BBF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5E19CCD420573A0D00AF5BBF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E19CCD520573A0D00AF5BBF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5E19CCEE20573A0D00AF5BBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5E19CCEF20573A0D00AF5BBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E19CCF120573A0D00AF5BBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Ruka/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.za.georgekapoya.ruka.Ruka;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5E19CCF220573A0D00AF5BBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Ruka/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.za.georgekapoya.ruka.Ruka;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5E19CCF420573A0D00AF5BBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RukaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.za.georgekapoya.ruka.RukaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ruka.app/Ruka";
+			};
+			name = Debug;
+		};
+		5E19CCF520573A0D00AF5BBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RukaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.za.georgekapoya.ruka.RukaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ruka.app/Ruka";
+			};
+			name = Release;
+		};
+		5E19CCF720573A0D00AF5BBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RukaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.za.georgekapoya.ruka.RukaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ruka;
+			};
+			name = Debug;
+		};
+		5E19CCF820573A0D00AF5BBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RukaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.za.georgekapoya.ruka.RukaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ruka;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E19CCC020573A0C00AF5BBF /* Build configuration list for PBXProject "Ruka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E19CCEE20573A0D00AF5BBF /* Debug */,
+				5E19CCEF20573A0D00AF5BBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E19CCF020573A0D00AF5BBF /* Build configuration list for PBXNativeTarget "Ruka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E19CCF120573A0D00AF5BBF /* Debug */,
+				5E19CCF220573A0D00AF5BBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E19CCF320573A0D00AF5BBF /* Build configuration list for PBXNativeTarget "RukaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E19CCF420573A0D00AF5BBF /* Debug */,
+				5E19CCF520573A0D00AF5BBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E19CCF620573A0D00AF5BBF /* Build configuration list for PBXNativeTarget "RukaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E19CCF720573A0D00AF5BBF /* Debug */,
+				5E19CCF820573A0D00AF5BBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5E19CCCF20573A0D00AF5BBF /* Ruka.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5E19CCD020573A0D00AF5BBF /* Ruka.xcdatamodel */,
+			);
+			currentVersion = 5E19CCD020573A0D00AF5BBF /* Ruka.xcdatamodel */;
+			path = Ruka.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5E19CCBD20573A0C00AF5BBF /* Project object */;
+}
