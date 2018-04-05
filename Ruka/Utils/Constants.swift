@@ -19,6 +19,8 @@ let BASE_URL  = "http://46.101.89.206/api/v1/"
 let LOGIN_URL = "\(BASE_URL)account/login"
 let REGISTER_URL = "\(BASE_URL)account/register"
 
+let ALL_SERVICE_URL = "\(BASE_URL)service"
+
 let HAS_SEEN_ON_BOARD  = "HAS_SEEN_ON_BOARD"
 let LOGGED_IN_KEY = "loggedin"
 let USER_EMAIL  = "user_email"
@@ -31,4 +33,10 @@ let HEADER = [
     "Content-Type": "application/json; charset=utf-8"
 ]
 
+
+
+//Error msg
+let SERVICE_ERROR = "We're having trouble connecting to the service, please try again later."
+let NETWORK_ERROR =  "No internet connection."
+let DATA_ERROR  =  "We're having trouble processing  data, please try again."
 

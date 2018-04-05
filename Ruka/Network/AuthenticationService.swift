@@ -18,9 +18,6 @@ protocol AuthenticationProtocol {
 
 class AuthenticationService: AuthenticationProtocol {
    
-
-    
- 
     enum LoginResult {
         case Success(String)
         case Failure(String)
@@ -76,15 +73,12 @@ class AuthenticationService: AuthenticationProtocol {
         let body  = [ "email": lowercasedemail,
                       "password": password
                     ]
-        
-        
-        debugPrint(body)
         Alamofire.request(LOGIN_URL, method: .post, parameters: body, encoding: URLEncoding.queryString, headers: HEADER).responseJSON { (response) in
             if response.result.error == nil {
                 guard let data = response.data else {return}
                 let json = JSON(data: data)
                 debugPrint(json)
-                self.userEmail  = json["email"].stringValue
+                self.userEmail  = json["user"].stringValue
                 self.auth_token  = json["token"].stringValue
                 self.isLoggedIn  = true
                 self.defaults.synchronize()
@@ -92,13 +86,10 @@ class AuthenticationService: AuthenticationProtocol {
                 completionHandler(LoginResult.Success(self.auth_token))
             }else{
                 debugPrint(response.result.error as Any)
-                completionHandler(LoginResult.Failure("failure"))
+                completionHandler(LoginResult.Failure("Username or password incorrect"))
                 
             }
         }
-        
-        
-        
     }
     
     
@@ -108,9 +99,6 @@ class AuthenticationService: AuthenticationProtocol {
         let body  = [ "email": lowercasedemail,
                       "password": password
         ]
-      
-        
-        debugPrint(body)
         Alamofire.request(REGISTER_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             if response.result.error == nil {
                 guard let data = response.data else {return}
@@ -118,7 +106,6 @@ class AuthenticationService: AuthenticationProtocol {
                 debugPrint(response.result)
                 let name = json["name"].stringValue
                 let msg  = json["message"].stringValue
-                
                 if name == "UserExistsError" {
                   completionHandler(LoginResult.Failure(msg))
                 }else{
@@ -128,16 +115,9 @@ class AuthenticationService: AuthenticationProtocol {
             }else{
                 debugPrint(response.result.error as Any)
                 completionHandler(LoginResult.Failure("failure"))
-                
             }
-            
-            
         }
-        
     }
-    
-    
-    
 }
 
 struct ParameterQueryEncoding: ParameterEncoding {

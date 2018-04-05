@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 struct Menu {
     var title: String!
@@ -27,7 +28,7 @@ struct Sections {
 }
 
 
-class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource {
+class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource,MFMailComposeViewControllerDelegate {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var heroView: UIView!
@@ -43,7 +44,7 @@ class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource {
                 Menu(title:    "Favourite",imageName: "favourite_icon",viewController: "FavouriteVC"),
                 Menu(title:    "Chat",imageName: "messages_icon",viewController: "ChatVC")]),
         Sections(type: .B, items:   [
-            Menu(title:    "Help",imageName: "help_icon",viewController: "HelpVC"),
+            Menu(title:    "Help",imageName: "help_icon",viewController: "emailVC"),
             Menu(title:    "Login",imageName: "login_icon",viewController: "LoginController")])]
     
     override func viewDidLoad() {
@@ -105,6 +106,9 @@ class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource {
                 let vc = storyBoard.instantiateViewController(withIdentifier: item.viewController)
                 self.present(vc, animated: true, completion: nil)
             }
+        }else if item.viewController == "emailVC" {
+            self.sendSupportEmail()
+            return
         }else{
             
             let storyBoard = UIStoryboard(name: "Main", bundle:nil)
@@ -148,20 +152,54 @@ class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource {
         self.present(alert, animated: true, completion: nil)
     }
     
+    // MARK: - Request Support
+    func sendSupportEmail() {
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        if !MFMailComposeViewController.canSendMail() {
+            print("Mail services are not available")
+            return
+        }else{
+            let  version:String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+            let name = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as! String
+            let messageBody = "\n\n\n\n" + "Help with " + "\n\n\n App name: \(name) \n Version: \(version) \n Device: \(self.deviceName())\n OS version: \(self.osVersion())\n"
+            composeVC.setToRecipients(["gkapoya@gmail.com"])
+            composeVC.setSubject(NSLocalizedString("email_subject", comment: ""))
+            composeVC.setMessageBody(messageBody, isHTML: false)
+            present(composeVC, animated: false, completion: nil)
+        }
+        
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func osVersion()-> String {
+        let version = UIDevice.current.systemVersion
+        return  String(version)
+    }
+    
+    func deviceName()-> String{
+        return UIDevice.current.modelName
+    }
     
     @objc func updateMenu() {
         if AuthenticationService.instance.isLoggedIn {
             self.data = [
-                Sections(type: .A, items:
-                    [
+                Sections(type: .A, items:[
                         Menu(title:    "My Profile",imageName: "profile_icon",viewController: "ProfileVC"),
                         Menu(title:    "Explore",imageName: "explore_icon",viewController: "ExploreVC"),
                         Menu(title:    "Near ME",imageName: "near_icon",viewController: "NearVC"),
                         Menu(title:    "Favourite",imageName: "favourite_icon",viewController: "FavouriteVC"),
                         Menu(title:    "Chat",imageName: "messages_icon",viewController: "ChatVC")]),
                 Sections(type: .B, items:   [
-                    Menu(title:    "Help",imageName: "help_icon",viewController: "HelpVC"),
+                    Menu(title:    "Help",imageName: "help_icon",viewController: "emailVC"),
                     Menu(title:    "Logout",imageName: "logout_icon",viewController: "LoginController")])]
+             self.lblEmail.text  = AuthenticationService.instance.userEmail
+             self.lblEmail.setNeedsLayout()
         }else{
             self.data = [
                 Sections(type: .A, items:
@@ -169,9 +207,12 @@ class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource {
                         Menu(title:    "Explore",imageName: "explore_icon",viewController: "ExploreVC"),
                         Menu(title:    "Near ME",imageName: "near_icon",viewController: "NearVC")]),
                 Sections(type: .B, items:   [
-                    Menu(title:    "Help",imageName: "help_icon",viewController: "HelpVC"),
+                    Menu(title:    "Help",imageName: "help_icon",viewController: "emailVC"),
                     Menu(title:    "Login",imageName: "login_icon",viewController: "LoginController")])]
+            self.lblEmail.text  = ""
+            self.lblEmail.setNeedsLayout()
         }
+        
          self.tableView.reloadData()
     }
 }

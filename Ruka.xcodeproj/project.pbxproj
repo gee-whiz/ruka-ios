@@ -67,9 +67,33 @@
 		5EB87A6920705EB0001BE381 /* VOXToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB87A6820705EB0001BE381 /* VOXToast.swift */; };
 		5EB87A6A20705EB0001BE381 /* VOXToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB87A6820705EB0001BE381 /* VOXToast.swift */; };
 		5EB87A6B20705EB0001BE381 /* VOXToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB87A6820705EB0001BE381 /* VOXToast.swift */; };
+		5ED70DE1207628F1005A285E /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED70DE0207628F1005A285E /* NoDataView.xib */; };
+		5ED70DE32076290D005A285E /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DE22076290D005A285E /* NoDataView.swift */; };
+		5ED70DE520764687005A285E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DE420764687005A285E /* Service.swift */; };
+		5ED70DE620764687005A285E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DE420764687005A285E /* Service.swift */; };
+		5ED70DE820764AE8005A285E /* StylistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DE720764AE8005A285E /* StylistService.swift */; };
+		5ED70DE920764AE8005A285E /* StylistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DE720764AE8005A285E /* StylistService.swift */; };
+		5ED70DEB207652D5005A285E /* ServicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DEA207652D5005A285E /* ServicePresenter.swift */; };
+		5ED70DEC207652D5005A285E /* ServicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DEA207652D5005A285E /* ServicePresenter.swift */; };
+		5ED70DED207652D5005A285E /* ServicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DEA207652D5005A285E /* ServicePresenter.swift */; };
+		5ED70DEF207659ED005A285E /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DEE207659ED005A285E /* ExploreCell.swift */; };
+		5ED70DF0207659ED005A285E /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DEE207659ED005A285E /* ExploreCell.swift */; };
+		5ED70DF1207659ED005A285E /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DEE207659ED005A285E /* ExploreCell.swift */; };
+		5ED70DF320769884005A285E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DF220769883005A285E /* CardView.swift */; };
+		5ED70DF420769884005A285E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DF220769883005A285E /* CardView.swift */; };
+		5ED70DF520769884005A285E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70DF220769883005A285E /* CardView.swift */; };
 		5EDEB38B20758BBC0069A81D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB38A20758BBC0069A81D /* ProfileVC.swift */; };
 		5EDEB38C20758BBC0069A81D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB38A20758BBC0069A81D /* ProfileVC.swift */; };
 		5EDEB38D20758BBC0069A81D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB38A20758BBC0069A81D /* ProfileVC.swift */; };
+		5EDEB38F2075A3B70069A81D /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB38E2075A3B70069A81D /* FavouriteVC.swift */; };
+		5EDEB3902075A3B70069A81D /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB38E2075A3B70069A81D /* FavouriteVC.swift */; };
+		5EDEB3912075A3B70069A81D /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB38E2075A3B70069A81D /* FavouriteVC.swift */; };
+		5EDEB3932075A3D00069A81D /* NearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB3922075A3D00069A81D /* NearVC.swift */; };
+		5EDEB3942075A3D00069A81D /* NearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB3922075A3D00069A81D /* NearVC.swift */; };
+		5EDEB3952075A3D00069A81D /* NearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB3922075A3D00069A81D /* NearVC.swift */; };
+		5EDEB3972075A3E40069A81D /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB3962075A3E40069A81D /* ChatListVC.swift */; };
+		5EDEB3982075A3E40069A81D /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB3962075A3E40069A81D /* ChatListVC.swift */; };
+		5EDEB3992075A3E40069A81D /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB3962075A3E40069A81D /* ChatListVC.swift */; };
 		76BBFDB4E868AFBEE0F6F342 /* Pods_RukaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76B808FB6FCFEBACD276C4E /* Pods_RukaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,7 +157,17 @@
 		5E4A110A2059C9D700D70597 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5EB87A64206F6F80001BE381 /* RegsierCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegsierCell.swift; sourceTree = "<group>"; };
 		5EB87A6820705EB0001BE381 /* VOXToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VOXToast.swift; sourceTree = "<group>"; };
+		5ED70DE0207628F1005A285E /* NoDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
+		5ED70DE22076290D005A285E /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		5ED70DE420764687005A285E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		5ED70DE720764AE8005A285E /* StylistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylistService.swift; sourceTree = "<group>"; };
+		5ED70DEA207652D5005A285E /* ServicePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePresenter.swift; sourceTree = "<group>"; };
+		5ED70DEE207659ED005A285E /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
+		5ED70DF220769883005A285E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5EDEB38A20758BBC0069A81D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		5EDEB38E2075A3B70069A81D /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
+		5EDEB3922075A3D00069A81D /* NearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearVC.swift; sourceTree = "<group>"; };
+		5EDEB3962075A3E40069A81D /* ChatListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListVC.swift; sourceTree = "<group>"; };
 		B57DF91C44C5F6A0EDF19EFE /* Pods_Ruka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ruka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD36D22599D7172CA93D1451 /* Pods-Ruka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruka.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ruka/Pods-Ruka.release.xcconfig"; sourceTree = "<group>"; };
 		D01B2DC3982085CEBC907A6E /* Pods-RukaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RukaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RukaTests/Pods-RukaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				5E4A10F72059C73400D70597 /* AuthenticationService.swift */,
+				5ED70DE720764AE8005A285E /* StylistService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -273,6 +308,9 @@
 				5E0C262120744F4100CB363A /* MenuVC.swift */,
 				5E0C262420744F7500CB363A /* ExploreVC.swift */,
 				5EDEB38A20758BBC0069A81D /* ProfileVC.swift */,
+				5EDEB38E2075A3B70069A81D /* FavouriteVC.swift */,
+				5EDEB3922075A3D00069A81D /* NearVC.swift */,
+				5EDEB3962075A3E40069A81D /* ChatListVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +325,10 @@
 				5EB87A64206F6F80001BE381 /* RegsierCell.swift */,
 				5E0C2627207459AD00CB363A /* CircleImage.swift */,
 				5E0C262A2074660800CB363A /* MenuCell.swift */,
+				5ED70DE0207628F1005A285E /* NoDataView.xib */,
+				5ED70DE22076290D005A285E /* NoDataView.swift */,
+				5ED70DEE207659ED005A285E /* ExploreCell.swift */,
+				5ED70DF220769883005A285E /* CardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				5E4A11022059C99F00D70597 /* User.swift */,
+				5ED70DE420764687005A285E /* Service.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				5E4A10FB2059C7A600D70597 /* AuthenticationPresenter.swift */,
+				5ED70DEA207652D5005A285E /* ServicePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -436,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E19CCD620573A0D00AF5BBF /* LaunchScreen.storyboard in Resources */,
+				5ED70DE1207628F1005A285E /* NoDataView.xib in Resources */,
 				5E19CCD320573A0D00AF5BBF /* Assets.xcassets in Resources */,
 				5E19CCCE20573A0D00AF5BBF /* Main.storyboard in Resources */,
 			);
@@ -596,6 +641,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Ruka/Pods-Ruka-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
@@ -608,6 +654,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EmptyDataSet_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
@@ -637,20 +684,29 @@
 				5E386C69205D84CD00EF7F82 /* GradientView.swift in Sources */,
 				5E0C262B2074660800CB363A /* MenuCell.swift in Sources */,
 				5E19CCD120573A0D00AF5BBF /* Ruka.xcdatamodeld in Sources */,
+				5ED70DEB207652D5005A285E /* ServicePresenter.swift in Sources */,
 				5E19CCFF20573DBC00AF5BBF /* RootViewController.swift in Sources */,
+				5ED70DEF207659ED005A285E /* ExploreCell.swift in Sources */,
 				5E386C5D205D7B4500EF7F82 /* FloatingLabelTextField.swift in Sources */,
 				5E0C262220744F4100CB363A /* MenuVC.swift in Sources */,
+				5ED70DE520764687005A285E /* Service.swift in Sources */,
 				5EDEB38B20758BBC0069A81D /* ProfileVC.swift in Sources */,
 				5E386C61205D7F0900EF7F82 /* LoginCell.swift in Sources */,
 				5E19CCC920573A0D00AF5BBF /* AppDelegate.swift in Sources */,
+				5ED70DE820764AE8005A285E /* StylistService.swift in Sources */,
 				5E386C65205D809300EF7F82 /* GradientButton.swift in Sources */,
+				5EDEB3932075A3D00069A81D /* NearVC.swift in Sources */,
+				5ED70DE32076290D005A285E /* NoDataView.swift in Sources */,
+				5EDEB38F2075A3B70069A81D /* FavouriteVC.swift in Sources */,
 				5E4A11032059C99F00D70597 /* User.swift in Sources */,
+				5EDEB3972075A3E40069A81D /* ChatListVC.swift in Sources */,
 				5E4A110B2059C9D700D70597 /* Extension.swift in Sources */,
 				5E4A10F82059C73400D70597 /* AuthenticationService.swift in Sources */,
 				5E4A10FC2059C7A600D70597 /* AuthenticationPresenter.swift in Sources */,
 				5EB87A65206F6F80001BE381 /* RegsierCell.swift in Sources */,
 				5E0C2628207459AD00CB363A /* CircleImage.swift in Sources */,
 				5E4A10FF2059C97A00D70597 /* LoginController.swift in Sources */,
+				5ED70DF320769884005A285E /* CardView.swift in Sources */,
 				5E4A11072059C9C700D70597 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,9 +717,12 @@
 			files = (
 				5E386C72205D9A6E00EF7F82 /* Observable.swift in Sources */,
 				5E19CCE120573A0D00AF5BBF /* RukaTests.swift in Sources */,
+				5ED70DE620764687005A285E /* Service.swift in Sources */,
 				5E4A11002059C97A00D70597 /* LoginController.swift in Sources */,
+				5ED70DE920764AE8005A285E /* StylistService.swift in Sources */,
 				5EB87A6A20705EB0001BE381 /* VOXToast.swift in Sources */,
 				5E0C262320744F4100CB363A /* MenuVC.swift in Sources */,
+				5ED70DEC207652D5005A285E /* ServicePresenter.swift in Sources */,
 				5E386C6A205D84CD00EF7F82 /* GradientView.swift in Sources */,
 				5E0C262C2074660800CB363A /* MenuCell.swift in Sources */,
 				5E4A110C2059C9D700D70597 /* Extension.swift in Sources */,
@@ -671,15 +730,20 @@
 				5EDEB38C20758BBC0069A81D /* ProfileVC.swift in Sources */,
 				5E386C66205D809300EF7F82 /* GradientButton.swift in Sources */,
 				5E386C5E205D7B4500EF7F82 /* FloatingLabelTextField.swift in Sources */,
+				5ED70DF420769884005A285E /* CardView.swift in Sources */,
+				5EDEB3942075A3D00069A81D /* NearVC.swift in Sources */,
 				5E4A10F92059C73400D70597 /* AuthenticationService.swift in Sources */,
 				5EB87A66206F6F80001BE381 /* RegsierCell.swift in Sources */,
 				5E0C262620744F7500CB363A /* ExploreVC.swift in Sources */,
+				5EDEB3982075A3E40069A81D /* ChatListVC.swift in Sources */,
 				5E0C262020744E5500CB363A /* SWRevealViewController.m in Sources */,
 				5E4A11042059C99F00D70597 /* User.swift in Sources */,
 				5E0C2629207459AD00CB363A /* CircleImage.swift in Sources */,
+				5EDEB3902075A3B70069A81D /* FavouriteVC.swift in Sources */,
 				5E386C62205D7F0900EF7F82 /* LoginCell.swift in Sources */,
 				5E4A10FD2059C7A600D70597 /* AuthenticationPresenter.swift in Sources */,
 				5E4A11082059C9C700D70597 /* Constants.swift in Sources */,
+				5ED70DF0207659ED005A285E /* ExploreCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,19 +751,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EDEB3992075A3E40069A81D /* ChatListVC.swift in Sources */,
 				5E4A110D2059C9D700D70597 /* Extension.swift in Sources */,
 				5E19CCEC20573A0D00AF5BBF /* RukaUITests.swift in Sources */,
 				5E386C6B205D84CD00EF7F82 /* GradientView.swift in Sources */,
+				5ED70DED207652D5005A285E /* ServicePresenter.swift in Sources */,
 				5E4A11012059C97A00D70597 /* LoginController.swift in Sources */,
 				5E386C63205D7F0900EF7F82 /* LoginCell.swift in Sources */,
+				5ED70DF520769884005A285E /* CardView.swift in Sources */,
 				5EB87A67206F6F80001BE381 /* RegsierCell.swift in Sources */,
 				5E386C67205D809300EF7F82 /* GradientButton.swift in Sources */,
+				5EDEB3952075A3D00069A81D /* NearVC.swift in Sources */,
 				5E386C5B205D655600EF7F82 /* RegisterViewController.swift in Sources */,
 				5EDEB38D20758BBC0069A81D /* ProfileVC.swift in Sources */,
 				5E4A11052059C99F00D70597 /* User.swift in Sources */,
+				5EDEB3912075A3B70069A81D /* FavouriteVC.swift in Sources */,
 				5EB87A6B20705EB0001BE381 /* VOXToast.swift in Sources */,
 				5E4A11092059C9C700D70597 /* Constants.swift in Sources */,
 				5E386C5F205D7B4500EF7F82 /* FloatingLabelTextField.swift in Sources */,
+				5ED70DF1207659ED005A285E /* ExploreCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

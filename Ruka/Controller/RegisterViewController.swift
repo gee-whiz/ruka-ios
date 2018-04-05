@@ -34,9 +34,7 @@ class RegisterViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 
             }
-            
             presenter?.errorMsg.observe{(msg) in
-                
                 if msg.count > 0 {
                     self.activityIndicator.stopAnimating()
                     self.tableView.reloadData()

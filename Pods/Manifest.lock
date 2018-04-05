@@ -6,6 +6,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - EmptyDataSet-Swift (4.0.3)
   - FacebookCore (0.3.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.27)
@@ -26,15 +27,17 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - EmptyDataSet-Swift
   - FacebookCore
   - FacebookLogin
   - IQKeyboardManagerSwift
-  - SDWebImage
+  - SDWebImage (= 4.3.2)
   - SwiftyJSON (= 3.1.4)
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  EmptyDataSet-Swift: 772ea54b230adba433d3fd1e2ddf0dd97b837f8e
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
   FBSDKCoreKit: e08ccfcefa7bc1347a07c276dac9bf6c7fe57024
@@ -43,6 +46,6 @@ SPEC CHECKSUMS:
   SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 497669626ecbbbc51f02d6f14dfa3ec31f63fa29
+PODFILE CHECKSUM: 559aba1be1acb9e2511fa55c4730b726a78a9134
 
 COCOAPODS: 1.4.0

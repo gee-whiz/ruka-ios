@@ -26,14 +26,19 @@ class LoginController: UIViewController, UITableViewDelegate, UITableViewDataSou
     var presenter: AuthenticationPresenter? {
         didSet {
             presenter?.auth_token.observe {(results) in
-                
                 if results.count > 5 {
                     self.activityIndicator.stopAnimating()
                     self.tableView.reloadData()
                     self.dismiss(animated: true, completion: nil)
                 }
-                
-                
+            }
+            
+            presenter?.errorMsg.observe {(msg) in
+                if msg.count > 3 {
+                    self.activityIndicator.stopAnimating()
+                    self.tableView.reloadData()
+                    self.showMessage(msg, type: .error)
+                }
             }
         }
     }
