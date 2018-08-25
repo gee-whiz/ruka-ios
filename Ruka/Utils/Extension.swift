@@ -72,3 +72,78 @@ public extension UIDevice {
     }
     
 }
+
+
+
+
+extension UITextField {
+    enum Direction
+    {
+        case Left
+        case Right
+    }
+    
+    func AddIcon(direction:Direction,imageName:String,Frame:CGRect,backgroundColor:UIColor){
+        let View = UIView(frame: Frame)
+        View.backgroundColor = backgroundColor
+        
+        let imageView = UIImageView(frame: Frame)
+        imageView.image = UIImage(named: imageName)
+        
+        View.addSubview(imageView)
+        
+        if Direction.Left == direction
+        {
+            self.leftViewMode = .always
+            self.leftView = View
+        }
+        else
+        {
+            self.rightViewMode = .always
+            self.rightView = View
+        }
+    }
+    
+}
+
+extension String {
+    
+    //To check text field or String is blank or not
+    var isBlank: Bool {
+        get {
+            let trimmed = trimmingCharacters(in: CharacterSet.whitespaces)
+            return trimmed.isEmpty
+        }
+    }
+    
+    //Validate Email
+    var isEmail: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", options: .caseInsensitive)
+            return regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count)) != nil
+        } catch {
+            return false
+        }
+    }
+}
+
+
+extension UIButton {
+    func loadingIndicator(show: Bool) {
+        if show {
+            let indicator = UIActivityIndicatorView()
+            let buttonHeight = self.bounds.size.height
+            let buttonWidth = self.bounds.size.width
+            indicator.center = CGPoint(x: buttonWidth/2, y: buttonHeight/2)
+            self.addSubview(indicator)
+            indicator.startAnimating()
+        } else {
+            for view in self.subviews {
+                if let indicator = view as? UIActivityIndicatorView {
+                    indicator.stopAnimating()
+                    indicator.removeFromSuperview()
+                }
+            }
+        }
+    }
+}

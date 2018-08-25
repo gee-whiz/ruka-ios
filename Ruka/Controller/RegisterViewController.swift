@@ -18,21 +18,26 @@ class RegisterViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         self.setupView()
         self.presenter = AuthenticationPresenter()
-        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight =  self.view.frame.height
     }
     
     
     var presenter: AuthenticationPresenter? {
         didSet {
             presenter?.auth_token.observe {(results) in
-                
                 if results.count > 5 {
+                    self.presenter?.createUser(emai: AuthenticationService.instance.userEmail)
+                }
+            }
+            presenter?.registerMsg.observe {
+                [unowned self] (results) in
+                debugPrint(results)
+                if results.count > 3 {
                     self.activityIndicator.stopAnimating()
                     self.tableView.reloadData()
-                     self.dismiss(animated: true, completion: nil)
+                    self.dismiss(animated: true, completion: nil)
                 }
-                
-                
             }
             presenter?.errorMsg.observe{(msg) in
                 if msg.count > 0 {
@@ -44,7 +49,7 @@ class RegisterViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    
+
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,9 +62,8 @@ class RegisterViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  self.view.frame.height
+        return  UITableViewAutomaticDimension
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "RegsierCell", for: indexPath) as! RegsierCell
@@ -68,15 +72,16 @@ class RegisterViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.callRegister = {
             guard let email = cell.edtEmail.text , cell.edtEmail.hasText else {return
-                self.showMessage("Please enter a valid email address", type: .error)
+                cell.edtEmail.errorMessage  = "Please enter a valid email address"
                 
             }
-            
+            if (!(cell.edtEmail.text?.isEmail)!) {
+                cell.edtEmail.errorMessage  = "Please enter a valid email address"
+                return
+            }
             guard let password = cell.edtPassword.text , cell.edtPassword.hasText else {return
-                self.showMessage("Please enter password", type: .error)
-                
+                cell.edtPassword.errorMessage = "Please enter password"
             }
-            
             
             self.view.endEditing(true)
             cell.btnRegister.setTitle("", for: .normal)

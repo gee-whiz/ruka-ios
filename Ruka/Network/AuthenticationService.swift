@@ -47,15 +47,7 @@ class AuthenticationService: AuthenticationProtocol {
         }
     }
     
-    var user_id: String {
-        get {
-            return defaults.value(forKey: USER_ID) as? String ?? ""
-        }
-        
-        set {
-            return  defaults.set(newValue, forKey: USER_ID)
-        }
-    }
+  
     
     var userEmail: String {
         get {

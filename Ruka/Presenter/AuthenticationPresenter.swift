@@ -16,14 +16,17 @@ class AuthenticationPresenter {
     
     private var loginService: AuthenticationProtocol
     private var registerService :AuthenticationProtocol
+    private var userService: UserProtocol
+    
       var errorMsg: Observable<String>
       var auth_token: Observable<String>
-    var registerMsg: Observable<String>
+       var registerMsg: Observable<String>
     
     
     init() {
         self.loginService = AuthenticationService()
         self.registerService = AuthenticationService()
+        self.userService = UserService()
         self.errorMsg  = Observable("")
         self.auth_token  =  Observable("")
         self.registerMsg  = Observable("")
@@ -36,6 +39,7 @@ class AuthenticationPresenter {
             switch (results) {
             case .Success(let result):
                 self.auth_token.value  = result
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: UPDATEPROFILE),object: nil)
                 self.errorMsg.value  = ""
             case .Failure(let error):
                 self.errorMsg.value  = error
@@ -58,6 +62,18 @@ class AuthenticationPresenter {
             }
         })
         
+    }
+    
+    func createUser(emai: String) {
+        self.userService.createUser(email: emai, completion: {(results) in
+            switch (results) {
+            case .Success(let result):
+                self.registerMsg.value  = result
+                self.errorMsg.value  = ""
+            case .Failure(let error):
+                self.errorMsg.value  = error
+            }
+        })
     }
     
 }

@@ -6,6 +6,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - Cosmos (15.0.0)
   - EmptyDataSet-Swift (4.0.3)
   - FacebookCore (0.3.0):
     - Bolts (~> 1.8)
@@ -20,6 +21,53 @@ PODS:
   - FBSDKLoginKit (4.31.1):
     - FBSDKCoreKit
   - IQKeyboardManagerSwift (5.0.8)
+  - MaterialComponents/AnimationTiming (46.1.0)
+  - MaterialComponents/BottomAppBar (46.1.0):
+    - MaterialComponents/Buttons
+    - MaterialComponents/NavigationBar
+    - MaterialComponents/private/Math
+    - MDFInternationalization
+  - MaterialComponents/ButtonBar (46.1.0):
+    - MaterialComponents/Buttons
+    - MDFInternationalization
+  - MaterialComponents/Buttons (46.1.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Ink (46.1.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/NavigationBar (46.1.0):
+    - MaterialComponents/ButtonBar
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Palettes (46.1.0)
+  - MaterialComponents/private/Application (46.1.0)
+  - MaterialComponents/private/Math (46.1.0)
+  - MaterialComponents/ShadowElevations (46.1.0)
+  - MaterialComponents/ShadowLayer (46.1.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/TextFields (46.1.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - "MaterialComponents/TextFields+Extensions (46.1.0)":
+    - "MaterialComponents/TextFields+Extensions/ColorThemer (= 46.1.0)"
+  - "MaterialComponents/TextFields+Extensions/ColorThemer (46.1.0)":
+    - MaterialComponents/TextFields
+    - MaterialComponents/Themes
+  - MaterialComponents/Themes (46.1.0)
+  - MaterialComponents/Typography (46.1.0):
+    - MaterialComponents/private/Application
+  - MDFInternationalization (1.0.4)
+  - MDFTextAccessibility (1.2.0)
   - SDWebImage (4.3.2):
     - SDWebImage/Core (= 4.3.2)
   - SDWebImage/Core (4.3.2)
@@ -27,25 +75,49 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Cosmos
   - EmptyDataSet-Swift
   - FacebookCore
   - FacebookLogin
   - IQKeyboardManagerSwift
+  - MaterialComponents/BottomAppBar
+  - "MaterialComponents/TextFields+Extensions"
   - SDWebImage (= 4.3.2)
   - SwiftyJSON (= 3.1.4)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Bolts
+    - Cosmos
+    - EmptyDataSet-Swift
+    - FacebookCore
+    - FacebookLogin
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - IQKeyboardManagerSwift
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
+    - SDWebImage
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  Cosmos: a6dbd3d0baa0cc8f51f8598f7508d5a09d0a9ade
   EmptyDataSet-Swift: 772ea54b230adba433d3fd1e2ddf0dd97b837f8e
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
   FBSDKCoreKit: e08ccfcefa7bc1347a07c276dac9bf6c7fe57024
   FBSDKLoginKit: 99797ac39252fef6f72600b886f6ee60b4b29cab
   IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
+  MaterialComponents: f14582653f35407ff1aef50e705a15c1b0d0b70c
+  MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
+  MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 559aba1be1acb9e2511fa55c4730b726a78a9134
+PODFILE CHECKSUM: 56b6588c35385700f8ff809e6a383ff62e014245
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

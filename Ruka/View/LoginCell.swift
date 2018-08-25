@@ -10,7 +10,7 @@ import UIKit
 import FacebookLogin
 import FBSDKLoginKit
 
-class LoginCell: UITableViewCell {
+class LoginCell: UITableViewCell, UITextFieldDelegate  {
 
     @IBOutlet weak var loginView: UIView!
 
@@ -22,6 +22,8 @@ class LoginCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
      
+        self.edtEmail.delegate  = self
+        self.edtPassword.delegate  = self
     
     }
 
@@ -36,6 +38,20 @@ class LoginCell: UITableViewCell {
     
     @IBAction func registerTapped(_ sender: Any) {
         self.callRegister! ()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.edtPassword.errorMessage  = ""
+        self.edtEmail.errorMessage = ""
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
     }
     
 }

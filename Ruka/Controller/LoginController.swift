@@ -19,6 +19,8 @@ class LoginController: UIViewController, UITableViewDelegate, UITableViewDataSou
         super.viewDidLoad()
          self.setupView()
         self.presenter = AuthenticationPresenter()
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight =  self.view.frame.height
      
     }
 
@@ -58,7 +60,7 @@ class LoginController: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  self.view.frame.height
+        return  UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,13 +73,17 @@ class LoginController: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         cell.callLogin = {
             guard let email = cell.edtEmail.text , cell.edtEmail.hasText else {return
-                self.showMessage("Please enter a valid email address", type: .error)
+                cell.edtEmail.errorMessage  = "Please enter a valid email address"
                 
+            }
+           
+            if (!(cell.edtEmail.text?.isEmail)!) {
+                cell.edtEmail.errorMessage  = "Please enter a valid email address"
+                return
             }
             
             guard let password = cell.edtPassword.text , cell.edtPassword.hasText else {return
-                self.showMessage("Please enter password", type: .error)
-                
+                cell.edtPassword.errorMessage = "Please enter password"
             }
             
             

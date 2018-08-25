@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E43EAA738A62CA4662C42C131AE2DDCB"
+               BlueprintIdentifier = "447C403B252B13FDAFD334E266D8DE35"
                BuildableName = "Pods_Ruka.framework"
                BlueprintName = "Pods-Ruka"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E43EAA738A62CA4662C42C131AE2DDCB"
+            BlueprintIdentifier = "447C403B252B13FDAFD334E266D8DE35"
             BuildableName = "Pods_Ruka.framework"
             BlueprintName = "Pods-Ruka"
             ReferencedContainer = "container:Pods.xcodeproj">

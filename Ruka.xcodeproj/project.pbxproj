@@ -28,6 +28,36 @@
 		5E19CCE120573A0D00AF5BBF /* RukaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19CCE020573A0D00AF5BBF /* RukaTests.swift */; };
 		5E19CCEC20573A0D00AF5BBF /* RukaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19CCEB20573A0D00AF5BBF /* RukaUITests.swift */; };
 		5E19CCFF20573DBC00AF5BBF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19CCFE20573DBC00AF5BBF /* RootViewController.swift */; };
+		5E2BDD3B207A08B4007717BF /* AddServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD3A207A08B4007717BF /* AddServiceVC.swift */; };
+		5E2BDD3C207A08B4007717BF /* AddServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD3A207A08B4007717BF /* AddServiceVC.swift */; };
+		5E2BDD3D207A08B4007717BF /* AddServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD3A207A08B4007717BF /* AddServiceVC.swift */; };
+		5E2BDD3F207A0F37007717BF /* ServiceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD3E207A0F37007717BF /* ServiceDetail.swift */; };
+		5E2BDD40207A0F37007717BF /* ServiceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD3E207A0F37007717BF /* ServiceDetail.swift */; };
+		5E2BDD41207A0F37007717BF /* ServiceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD3E207A0F37007717BF /* ServiceDetail.swift */; };
+		5E2BDD44207A1A6F007717BF /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD43207A1A6F007717BF /* ParallaxHeaderView.m */; };
+		5E2BDD45207A1A6F007717BF /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD43207A1A6F007717BF /* ParallaxHeaderView.m */; };
+		5E2BDD46207A1A6F007717BF /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD43207A1A6F007717BF /* ParallaxHeaderView.m */; };
+		5E2BDD49207A1A9F007717BF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD47207A1A9F007717BF /* UIImage+ImageEffects.m */; };
+		5E2BDD4A207A1A9F007717BF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD47207A1A9F007717BF /* UIImage+ImageEffects.m */; };
+		5E2BDD4B207A1A9F007717BF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD47207A1A9F007717BF /* UIImage+ImageEffects.m */; };
+		5E2BDD4D207A1B4D007717BF /* ServiceDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD4C207A1B4D007717BF /* ServiceDetailCell.swift */; };
+		5E2BDD4E207A1B4D007717BF /* ServiceDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD4C207A1B4D007717BF /* ServiceDetailCell.swift */; };
+		5E2BDD4F207A1B4D007717BF /* ServiceDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD4C207A1B4D007717BF /* ServiceDetailCell.swift */; };
+		5E2BDD51207A364C007717BF /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD50207A364C007717BF /* CircularButton.swift */; };
+		5E2BDD52207A364C007717BF /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD50207A364C007717BF /* CircularButton.swift */; };
+		5E2BDD53207A364C007717BF /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD50207A364C007717BF /* CircularButton.swift */; };
+		5E2BDD55207A493D007717BF /* AddServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD54207A493D007717BF /* AddServiceCell.swift */; };
+		5E2BDD56207A493D007717BF /* AddServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD54207A493D007717BF /* AddServiceCell.swift */; };
+		5E2BDD57207A493D007717BF /* AddServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD54207A493D007717BF /* AddServiceCell.swift */; };
+		5E2BDD59207A4BF6007717BF /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD58207A4BF6007717BF /* PhotosCell.swift */; };
+		5E2BDD5A207A4BF6007717BF /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD58207A4BF6007717BF /* PhotosCell.swift */; };
+		5E2BDD5B207A4BF6007717BF /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD58207A4BF6007717BF /* PhotosCell.swift */; };
+		5E2BDD5D207A4C0F007717BF /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD5C207A4C0F007717BF /* PhotosCollectionViewController.swift */; };
+		5E2BDD5E207A4C0F007717BF /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD5C207A4C0F007717BF /* PhotosCollectionViewController.swift */; };
+		5E2BDD5F207A4C0F007717BF /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD5C207A4C0F007717BF /* PhotosCollectionViewController.swift */; };
+		5E2BDD61207A56D2007717BF /* AddServiceScndCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD60207A56D2007717BF /* AddServiceScndCell.swift */; };
+		5E2BDD62207A56D2007717BF /* AddServiceScndCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD60207A56D2007717BF /* AddServiceScndCell.swift */; };
+		5E2BDD63207A56D2007717BF /* AddServiceScndCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BDD60207A56D2007717BF /* AddServiceScndCell.swift */; };
 		5E386C59205D655600EF7F82 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E386C58205D655600EF7F82 /* RegisterViewController.swift */; };
 		5E386C5A205D655600EF7F82 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E386C58205D655600EF7F82 /* RegisterViewController.swift */; };
 		5E386C5B205D655600EF7F82 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E386C58205D655600EF7F82 /* RegisterViewController.swift */; };
@@ -61,6 +91,9 @@
 		5E4A110B2059C9D700D70597 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A110A2059C9D700D70597 /* Extension.swift */; };
 		5E4A110C2059C9D700D70597 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A110A2059C9D700D70597 /* Extension.swift */; };
 		5E4A110D2059C9D700D70597 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A110A2059C9D700D70597 /* Extension.swift */; };
+		5E8E5DE9207945A70059AFC6 /* UIFloatLabelTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E5DE7207945A60059AFC6 /* UIFloatLabelTextView.m */; };
+		5E8E5DEA2079485F0059AFC6 /* UIFloatLabelTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E5DE7207945A60059AFC6 /* UIFloatLabelTextView.m */; };
+		5E8E5DEB2079485F0059AFC6 /* UIFloatLabelTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E5DE7207945A60059AFC6 /* UIFloatLabelTextView.m */; };
 		5EB87A65206F6F80001BE381 /* RegsierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB87A64206F6F80001BE381 /* RegsierCell.swift */; };
 		5EB87A66206F6F80001BE381 /* RegsierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB87A64206F6F80001BE381 /* RegsierCell.swift */; };
 		5EB87A67206F6F80001BE381 /* RegsierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB87A64206F6F80001BE381 /* RegsierCell.swift */; };
@@ -94,6 +127,15 @@
 		5EDEB3972075A3E40069A81D /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB3962075A3E40069A81D /* ChatListVC.swift */; };
 		5EDEB3982075A3E40069A81D /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB3962075A3E40069A81D /* ChatListVC.swift */; };
 		5EDEB3992075A3E40069A81D /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEB3962075A3E40069A81D /* ChatListVC.swift */; };
+		5EED5BF12078CE9B00444958 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED5BF02078CE9B00444958 /* UserService.swift */; };
+		5EED5BF22078CE9B00444958 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED5BF02078CE9B00444958 /* UserService.swift */; };
+		5EED5BF32078CE9B00444958 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED5BF02078CE9B00444958 /* UserService.swift */; };
+		5EED5BF52078CF9700444958 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED5BF42078CF9700444958 /* UserPresenter.swift */; };
+		5EED5BF62078CF9700444958 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED5BF42078CF9700444958 /* UserPresenter.swift */; };
+		5EED5BF72078CF9700444958 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED5BF42078CF9700444958 /* UserPresenter.swift */; };
+		5EED5BF92078D4E200444958 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED5BF82078D4E200444958 /* ProfileCell.swift */; };
+		5EED5BFA2078D4E200444958 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED5BF82078D4E200444958 /* ProfileCell.swift */; };
+		5EED5BFB2078D4E200444958 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED5BF82078D4E200444958 /* ProfileCell.swift */; };
 		76BBFDB4E868AFBEE0F6F342 /* Pods_RukaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76B808FB6FCFEBACD276C4E /* Pods_RukaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,7 +170,7 @@
 		5E0C262420744F7500CB363A /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
 		5E0C2627207459AD00CB363A /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		5E0C262A2074660800CB363A /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
-		5E19CCC520573A0D00AF5BBF /* Ruka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruka.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E19CCC520573A0D00AF5BBF /* Beauty Cart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beauty Cart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E19CCC820573A0D00AF5BBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E19CCCA20573A0D00AF5BBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5E19CCCD20573A0D00AF5BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,6 +185,18 @@
 		5E19CCEB20573A0D00AF5BBF /* RukaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RukaUITests.swift; sourceTree = "<group>"; };
 		5E19CCED20573A0D00AF5BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E19CCFE20573DBC00AF5BBF /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		5E2BDD3A207A08B4007717BF /* AddServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceVC.swift; sourceTree = "<group>"; };
+		5E2BDD3E207A0F37007717BF /* ServiceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetail.swift; sourceTree = "<group>"; };
+		5E2BDD42207A1A6E007717BF /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
+		5E2BDD43207A1A6F007717BF /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
+		5E2BDD47207A1A9F007717BF /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		5E2BDD48207A1A9F007717BF /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		5E2BDD4C207A1B4D007717BF /* ServiceDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailCell.swift; sourceTree = "<group>"; };
+		5E2BDD50207A364C007717BF /* CircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
+		5E2BDD54207A493D007717BF /* AddServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceCell.swift; sourceTree = "<group>"; };
+		5E2BDD58207A4BF6007717BF /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
+		5E2BDD5C207A4C0F007717BF /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		5E2BDD60207A56D2007717BF /* AddServiceScndCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceScndCell.swift; sourceTree = "<group>"; };
 		5E386C58205D655600EF7F82 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5E386C5C205D7B4500EF7F82 /* FloatingLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabelTextField.swift; sourceTree = "<group>"; };
 		5E386C60205D7F0900EF7F82 /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
@@ -155,6 +209,8 @@
 		5E4A11022059C99F00D70597 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5E4A11062059C9C700D70597 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E4A110A2059C9D700D70597 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		5E8E5DE7207945A60059AFC6 /* UIFloatLabelTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFloatLabelTextView.m; sourceTree = "<group>"; };
+		5E8E5DE8207945A60059AFC6 /* UIFloatLabelTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFloatLabelTextView.h; sourceTree = "<group>"; };
 		5EB87A64206F6F80001BE381 /* RegsierCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegsierCell.swift; sourceTree = "<group>"; };
 		5EB87A6820705EB0001BE381 /* VOXToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VOXToast.swift; sourceTree = "<group>"; };
 		5ED70DE0207628F1005A285E /* NoDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
@@ -168,6 +224,9 @@
 		5EDEB38E2075A3B70069A81D /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		5EDEB3922075A3D00069A81D /* NearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearVC.swift; sourceTree = "<group>"; };
 		5EDEB3962075A3E40069A81D /* ChatListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListVC.swift; sourceTree = "<group>"; };
+		5EED5BF02078CE9B00444958 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		5EED5BF42078CF9700444958 /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
+		5EED5BF82078D4E200444958 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		B57DF91C44C5F6A0EDF19EFE /* Pods_Ruka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ruka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD36D22599D7172CA93D1451 /* Pods-Ruka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruka.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ruka/Pods-Ruka.release.xcconfig"; sourceTree = "<group>"; };
 		D01B2DC3982085CEBC907A6E /* Pods-RukaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RukaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RukaTests/Pods-RukaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,7 +289,7 @@
 		5E19CCC620573A0D00AF5BBF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5E19CCC520573A0D00AF5BBF /* Ruka.app */,
+				5E19CCC520573A0D00AF5BBF /* Beauty Cart.app */,
 				5E19CCDC20573A0D00AF5BBF /* RukaTests.xctest */,
 				5E19CCE720573A0D00AF5BBF /* RukaUITests.xctest */,
 			);
@@ -279,6 +338,7 @@
 			children = (
 				5E4A10F72059C73400D70597 /* AuthenticationService.swift */,
 				5ED70DE720764AE8005A285E /* StylistService.swift */,
+				5EED5BF02078CE9B00444958 /* UserService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -311,6 +371,10 @@
 				5EDEB38E2075A3B70069A81D /* FavouriteVC.swift */,
 				5EDEB3922075A3D00069A81D /* NearVC.swift */,
 				5EDEB3962075A3E40069A81D /* ChatListVC.swift */,
+				5E2BDD3A207A08B4007717BF /* AddServiceVC.swift */,
+				5E2BDD3E207A0F37007717BF /* ServiceDetail.swift */,
+				5E2BDD58207A4BF6007717BF /* PhotosCell.swift */,
+				5E2BDD5C207A4C0F007717BF /* PhotosCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -318,7 +382,13 @@
 		5E19CCFC20573D7600AF5BBF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5E2BDD48207A1A9F007717BF /* UIImage+ImageEffects.h */,
+				5E2BDD47207A1A9F007717BF /* UIImage+ImageEffects.m */,
+				5E2BDD42207A1A6E007717BF /* ParallaxHeaderView.h */,
+				5E2BDD43207A1A6F007717BF /* ParallaxHeaderView.m */,
 				5E386C5C205D7B4500EF7F82 /* FloatingLabelTextField.swift */,
+				5E8E5DE8207945A60059AFC6 /* UIFloatLabelTextView.h */,
+				5E8E5DE7207945A60059AFC6 /* UIFloatLabelTextView.m */,
 				5E386C60205D7F0900EF7F82 /* LoginCell.swift */,
 				5E386C64205D809300EF7F82 /* GradientButton.swift */,
 				5E386C68205D84CD00EF7F82 /* GradientView.swift */,
@@ -329,6 +399,11 @@
 				5ED70DE22076290D005A285E /* NoDataView.swift */,
 				5ED70DEE207659ED005A285E /* ExploreCell.swift */,
 				5ED70DF220769883005A285E /* CardView.swift */,
+				5EED5BF82078D4E200444958 /* ProfileCell.swift */,
+				5E2BDD4C207A1B4D007717BF /* ServiceDetailCell.swift */,
+				5E2BDD50207A364C007717BF /* CircularButton.swift */,
+				5E2BDD54207A493D007717BF /* AddServiceCell.swift */,
+				5E2BDD60207A56D2007717BF /* AddServiceScndCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,6 +422,7 @@
 			children = (
 				5E4A10FB2059C7A600D70597 /* AuthenticationPresenter.swift */,
 				5ED70DEA207652D5005A285E /* ServicePresenter.swift */,
+				5EED5BF42078CF9700444958 /* UserPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -364,24 +440,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5E19CCC420573A0D00AF5BBF /* Ruka */ = {
+		5E19CCC420573A0D00AF5BBF /* Beauty Cart */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5E19CCF020573A0D00AF5BBF /* Build configuration list for PBXNativeTarget "Ruka" */;
+			buildConfigurationList = 5E19CCF020573A0D00AF5BBF /* Build configuration list for PBXNativeTarget "Beauty Cart" */;
 			buildPhases = (
 				126E0F30FDB0114642F0D3C9 /* [CP] Check Pods Manifest.lock */,
 				5E19CCC120573A0D00AF5BBF /* Sources */,
 				5E19CCC220573A0D00AF5BBF /* Frameworks */,
 				5E19CCC320573A0D00AF5BBF /* Resources */,
 				FFDD71817E0EAE94DE6DD463 /* [CP] Embed Pods Frameworks */,
-				94F05DB3B449C98AC70C7549 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Ruka;
+			name = "Beauty Cart";
 			productName = Ruka;
-			productReference = 5E19CCC520573A0D00AF5BBF /* Ruka.app */;
+			productReference = 5E19CCC520573A0D00AF5BBF /* Beauty Cart.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5E19CCDB20573A0D00AF5BBF /* RukaTests */ = {
@@ -392,8 +467,6 @@
 				5E19CCD820573A0D00AF5BBF /* Sources */,
 				5E19CCD920573A0D00AF5BBF /* Frameworks */,
 				5E19CCDA20573A0D00AF5BBF /* Resources */,
-				6C874B8B4F076CA2EA045D47 /* [CP] Embed Pods Frameworks */,
-				20E7D95B24230C4DD041E8A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -413,8 +486,6 @@
 				5E19CCE320573A0D00AF5BBF /* Sources */,
 				5E19CCE420573A0D00AF5BBF /* Frameworks */,
 				5E19CCE520573A0D00AF5BBF /* Resources */,
-				080C7CB8FE70E8A37475FF14 /* [CP] Embed Pods Frameworks */,
-				9D8C47BF5D0496506595B2EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -439,7 +510,7 @@
 					5E19CCC420573A0D00AF5BBF = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					5E19CCDB20573A0D00AF5BBF = {
 						CreatedOnToolsVersion = 9.2;
@@ -467,7 +538,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5E19CCC420573A0D00AF5BBF /* Ruka */,
+				5E19CCC420573A0D00AF5BBF /* Beauty Cart */,
 				5E19CCDB20573A0D00AF5BBF /* RukaTests */,
 				5E19CCE620573A0D00AF5BBF /* RukaUITests */,
 			);
@@ -503,21 +574,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		080C7CB8FE70E8A37475FF14 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RukaUITests/Pods-RukaUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		0D377D7885E68B21C11FB7E8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -554,21 +610,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		20E7D95B24230C4DD041E8A8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RukaTests/Pods-RukaTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2F77AAE807305FC93C0B1CBE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -587,51 +628,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6C874B8B4F076CA2EA045D47 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RukaTests/Pods-RukaTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		94F05DB3B449C98AC70C7549 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ruka/Pods-Ruka-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9D8C47BF5D0496506595B2EE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RukaUITests/Pods-RukaUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FFDD71817E0EAE94DE6DD463 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -641,12 +637,16 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Ruka/Pods-Ruka-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -654,12 +654,16 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EmptyDataSet_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -675,19 +679,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2BDD44207A1A6F007717BF /* ParallaxHeaderView.m in Sources */,
 				5E386C71205D9A6E00EF7F82 /* Observable.swift in Sources */,
 				5E0C261F20744E5500CB363A /* SWRevealViewController.m in Sources */,
 				5E19CCCB20573A0D00AF5BBF /* ViewController.swift in Sources */,
+				5EED5BF52078CF9700444958 /* UserPresenter.swift in Sources */,
 				5E0C262520744F7500CB363A /* ExploreVC.swift in Sources */,
+				5E2BDD3F207A0F37007717BF /* ServiceDetail.swift in Sources */,
 				5E386C59205D655600EF7F82 /* RegisterViewController.swift in Sources */,
+				5E2BDD59207A4BF6007717BF /* PhotosCell.swift in Sources */,
 				5EB87A6920705EB0001BE381 /* VOXToast.swift in Sources */,
+				5EED5BF12078CE9B00444958 /* UserService.swift in Sources */,
 				5E386C69205D84CD00EF7F82 /* GradientView.swift in Sources */,
 				5E0C262B2074660800CB363A /* MenuCell.swift in Sources */,
 				5E19CCD120573A0D00AF5BBF /* Ruka.xcdatamodeld in Sources */,
 				5ED70DEB207652D5005A285E /* ServicePresenter.swift in Sources */,
+				5E2BDD61207A56D2007717BF /* AddServiceScndCell.swift in Sources */,
 				5E19CCFF20573DBC00AF5BBF /* RootViewController.swift in Sources */,
 				5ED70DEF207659ED005A285E /* ExploreCell.swift in Sources */,
 				5E386C5D205D7B4500EF7F82 /* FloatingLabelTextField.swift in Sources */,
+				5E2BDD55207A493D007717BF /* AddServiceCell.swift in Sources */,
+				5E2BDD51207A364C007717BF /* CircularButton.swift in Sources */,
 				5E0C262220744F4100CB363A /* MenuVC.swift in Sources */,
 				5ED70DE520764687005A285E /* Service.swift in Sources */,
 				5EDEB38B20758BBC0069A81D /* ProfileVC.swift in Sources */,
@@ -701,12 +713,18 @@
 				5E4A11032059C99F00D70597 /* User.swift in Sources */,
 				5EDEB3972075A3E40069A81D /* ChatListVC.swift in Sources */,
 				5E4A110B2059C9D700D70597 /* Extension.swift in Sources */,
+				5E2BDD4D207A1B4D007717BF /* ServiceDetailCell.swift in Sources */,
 				5E4A10F82059C73400D70597 /* AuthenticationService.swift in Sources */,
 				5E4A10FC2059C7A600D70597 /* AuthenticationPresenter.swift in Sources */,
 				5EB87A65206F6F80001BE381 /* RegsierCell.swift in Sources */,
+				5E2BDD5D207A4C0F007717BF /* PhotosCollectionViewController.swift in Sources */,
 				5E0C2628207459AD00CB363A /* CircleImage.swift in Sources */,
+				5E2BDD3B207A08B4007717BF /* AddServiceVC.swift in Sources */,
 				5E4A10FF2059C97A00D70597 /* LoginController.swift in Sources */,
+				5EED5BF92078D4E200444958 /* ProfileCell.swift in Sources */,
 				5ED70DF320769884005A285E /* CardView.swift in Sources */,
+				5E8E5DE9207945A70059AFC6 /* UIFloatLabelTextView.m in Sources */,
+				5E2BDD49207A1A9F007717BF /* UIImage+ImageEffects.m in Sources */,
 				5E4A11072059C9C700D70597 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,33 +733,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2BDD45207A1A6F007717BF /* ParallaxHeaderView.m in Sources */,
+				5EED5BF62078CF9700444958 /* UserPresenter.swift in Sources */,
 				5E386C72205D9A6E00EF7F82 /* Observable.swift in Sources */,
+				5E2BDD5E207A4C0F007717BF /* PhotosCollectionViewController.swift in Sources */,
 				5E19CCE120573A0D00AF5BBF /* RukaTests.swift in Sources */,
+				5E2BDD62207A56D2007717BF /* AddServiceScndCell.swift in Sources */,
 				5ED70DE620764687005A285E /* Service.swift in Sources */,
 				5E4A11002059C97A00D70597 /* LoginController.swift in Sources */,
 				5ED70DE920764AE8005A285E /* StylistService.swift in Sources */,
+				5E2BDD3C207A08B4007717BF /* AddServiceVC.swift in Sources */,
 				5EB87A6A20705EB0001BE381 /* VOXToast.swift in Sources */,
+				5E8E5DEA2079485F0059AFC6 /* UIFloatLabelTextView.m in Sources */,
 				5E0C262320744F4100CB363A /* MenuVC.swift in Sources */,
 				5ED70DEC207652D5005A285E /* ServicePresenter.swift in Sources */,
 				5E386C6A205D84CD00EF7F82 /* GradientView.swift in Sources */,
+				5E2BDD5A207A4BF6007717BF /* PhotosCell.swift in Sources */,
 				5E0C262C2074660800CB363A /* MenuCell.swift in Sources */,
 				5E4A110C2059C9D700D70597 /* Extension.swift in Sources */,
 				5E386C5A205D655600EF7F82 /* RegisterViewController.swift in Sources */,
 				5EDEB38C20758BBC0069A81D /* ProfileVC.swift in Sources */,
+				5E2BDD56207A493D007717BF /* AddServiceCell.swift in Sources */,
 				5E386C66205D809300EF7F82 /* GradientButton.swift in Sources */,
 				5E386C5E205D7B4500EF7F82 /* FloatingLabelTextField.swift in Sources */,
 				5ED70DF420769884005A285E /* CardView.swift in Sources */,
 				5EDEB3942075A3D00069A81D /* NearVC.swift in Sources */,
 				5E4A10F92059C73400D70597 /* AuthenticationService.swift in Sources */,
+				5E2BDD4A207A1A9F007717BF /* UIImage+ImageEffects.m in Sources */,
+				5E2BDD40207A0F37007717BF /* ServiceDetail.swift in Sources */,
 				5EB87A66206F6F80001BE381 /* RegsierCell.swift in Sources */,
 				5E0C262620744F7500CB363A /* ExploreVC.swift in Sources */,
+				5E2BDD4E207A1B4D007717BF /* ServiceDetailCell.swift in Sources */,
 				5EDEB3982075A3E40069A81D /* ChatListVC.swift in Sources */,
 				5E0C262020744E5500CB363A /* SWRevealViewController.m in Sources */,
+				5E2BDD52207A364C007717BF /* CircularButton.swift in Sources */,
 				5E4A11042059C99F00D70597 /* User.swift in Sources */,
 				5E0C2629207459AD00CB363A /* CircleImage.swift in Sources */,
 				5EDEB3902075A3B70069A81D /* FavouriteVC.swift in Sources */,
 				5E386C62205D7F0900EF7F82 /* LoginCell.swift in Sources */,
+				5EED5BF22078CE9B00444958 /* UserService.swift in Sources */,
 				5E4A10FD2059C7A600D70597 /* AuthenticationPresenter.swift in Sources */,
+				5EED5BFA2078D4E200444958 /* ProfileCell.swift in Sources */,
 				5E4A11082059C9C700D70597 /* Constants.swift in Sources */,
 				5ED70DF0207659ED005A285E /* ExploreCell.swift in Sources */,
 			);
@@ -751,24 +783,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2BDD5B207A4BF6007717BF /* PhotosCell.swift in Sources */,
 				5EDEB3992075A3E40069A81D /* ChatListVC.swift in Sources */,
+				5E2BDD41207A0F37007717BF /* ServiceDetail.swift in Sources */,
+				5E2BDD4F207A1B4D007717BF /* ServiceDetailCell.swift in Sources */,
 				5E4A110D2059C9D700D70597 /* Extension.swift in Sources */,
 				5E19CCEC20573A0D00AF5BBF /* RukaUITests.swift in Sources */,
+				5E2BDD46207A1A6F007717BF /* ParallaxHeaderView.m in Sources */,
+				5E2BDD4B207A1A9F007717BF /* UIImage+ImageEffects.m in Sources */,
+				5EED5BFB2078D4E200444958 /* ProfileCell.swift in Sources */,
+				5EED5BF72078CF9700444958 /* UserPresenter.swift in Sources */,
 				5E386C6B205D84CD00EF7F82 /* GradientView.swift in Sources */,
+				5E8E5DEB2079485F0059AFC6 /* UIFloatLabelTextView.m in Sources */,
 				5ED70DED207652D5005A285E /* ServicePresenter.swift in Sources */,
 				5E4A11012059C97A00D70597 /* LoginController.swift in Sources */,
 				5E386C63205D7F0900EF7F82 /* LoginCell.swift in Sources */,
 				5ED70DF520769884005A285E /* CardView.swift in Sources */,
 				5EB87A67206F6F80001BE381 /* RegsierCell.swift in Sources */,
 				5E386C67205D809300EF7F82 /* GradientButton.swift in Sources */,
+				5E2BDD57207A493D007717BF /* AddServiceCell.swift in Sources */,
 				5EDEB3952075A3D00069A81D /* NearVC.swift in Sources */,
 				5E386C5B205D655600EF7F82 /* RegisterViewController.swift in Sources */,
 				5EDEB38D20758BBC0069A81D /* ProfileVC.swift in Sources */,
+				5E2BDD63207A56D2007717BF /* AddServiceScndCell.swift in Sources */,
+				5E2BDD3D207A08B4007717BF /* AddServiceVC.swift in Sources */,
+				5E2BDD5F207A4C0F007717BF /* PhotosCollectionViewController.swift in Sources */,
 				5E4A11052059C99F00D70597 /* User.swift in Sources */,
 				5EDEB3912075A3B70069A81D /* FavouriteVC.swift in Sources */,
 				5EB87A6B20705EB0001BE381 /* VOXToast.swift in Sources */,
+				5EED5BF32078CE9B00444958 /* UserService.swift in Sources */,
 				5E4A11092059C9C700D70597 /* Constants.swift in Sources */,
 				5E386C5F205D7B4500EF7F82 /* FloatingLabelTextField.swift in Sources */,
+				5E2BDD53207A364C007717BF /* CircularButton.swift in Sources */,
 				5ED70DF1207659ED005A285E /* ExploreCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,12 +824,12 @@
 /* Begin PBXTargetDependency section */
 		5E19CCDE20573A0D00AF5BBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5E19CCC420573A0D00AF5BBF /* Ruka */;
+			target = 5E19CCC420573A0D00AF5BBF /* Beauty Cart */;
 			targetProxy = 5E19CCDD20573A0D00AF5BBF /* PBXContainerItemProxy */;
 		};
 		5E19CCE920573A0D00AF5BBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5E19CCC420573A0D00AF5BBF /* Ruka */;
+			target = 5E19CCC420573A0D00AF5BBF /* Beauty Cart */;
 			targetProxy = 5E19CCE820573A0D00AF5BBF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -921,12 +967,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W8D95266BE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ECA Internet (PTY) LTD";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ECA Internet (PTY) LTD";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XG8766C4Q9;
 				INFOPLIST_FILE = Ruka/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.za.georgekapoya.ruka.Ruka;
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.immediaenterprise.fabrik.bencap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c86b7708-52f9-4e07-9e36-38cce027c3d3";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ruka/Controller/Ruka-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -940,12 +991,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W8D95266BE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ECA Internet (PTY) LTD";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ECA Internet (PTY) LTD";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XG8766C4Q9;
 				INFOPLIST_FILE = Ruka/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.za.georgekapoya.ruka.Ruka;
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.immediaenterprise.fabrik.bencap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c86b7708-52f9-4e07-9e36-38cce027c3d3";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ruka/Controller/Ruka-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1035,7 +1091,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5E19CCF020573A0D00AF5BBF /* Build configuration list for PBXNativeTarget "Ruka" */ = {
+		5E19CCF020573A0D00AF5BBF /* Build configuration list for PBXNativeTarget "Beauty Cart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5E19CCF120573A0D00AF5BBF /* Debug */,

@@ -9,6 +9,7 @@
 import UIKit
 import EmptyDataSet_Swift
 import SDWebImage
+import MaterialComponents.MaterialBottomAppBar
 
 
 private let reuseIdentifier = "ExploreCell"
@@ -22,6 +23,8 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     var activityIndicator = UIActivityIndicatorView()
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnMenu: UIButton!
+    var service:Service!
+    @IBOutlet weak var btnAdd: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge, color: .gray,  placeInTheCenterOf: view)
@@ -37,6 +40,7 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
          self.activityIndicator.startAnimating()
          self.presenter = ServicePresenter()
          self.presenter?.getAllService()
+        //self.setupBootomBar()
     }
 
   
@@ -66,13 +70,23 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     }
     
     
+    @IBAction func btnAddTapped(_ sender: Any) {
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let   vc = storyboard.instantiateViewController(withIdentifier: "AddServiceVC")
+            self.revealViewController().setFront(vc, animated: true)
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return self.serviceList.count
     }
     
     
   
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         self.service  = self.serviceList[indexPath.row]
+        self.performSegue(withIdentifier: "showDetail", sender: self)
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as!  ExploreCell
@@ -117,6 +131,32 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func backgroundColor(forEmptyDataSet scrollView: UIScrollView) -> UIColor? {
         return UIColor.init(white: 0.95, alpha: 1)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let vc = segue.destination  as! ServiceDetail
+            vc.service = self.service
+        }
+        
+        
+    }
+    
+    
+    func setupBootomBar() {
+        let frame = CGRect(x: 0, y: self.view.frame.height - 100, width: self.view.frame.width, height: 50.0)
+        let bottomBarView = MDCBottomAppBarView(frame: frame)
+        view.addSubview(bottomBarView)
+        
+  
+        
+        // Set the image on the floating button.
+        let addImage = UIImage(named:"ic_add_white")
+        bottomBarView.floatingButton.setImage(addImage, for: .normal)
+        bottomBarView.floatingButton.backgroundColor  = #colorLiteral(red: 0.3082081974, green: 0.1841563582, blue: 0.1004526243, alpha: 1)
+      
+
     }
 
 }

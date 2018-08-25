@@ -32,7 +32,7 @@ class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource,MFMa
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var heroView: UIView!
-    
+    var user = [User]()
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var imgProflie: CircleImage!
     var data = [
@@ -44,6 +44,7 @@ class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource,MFMa
                 Menu(title:    "Favourite",imageName: "favourite_icon",viewController: "FavouriteVC"),
                 Menu(title:    "Chat",imageName: "messages_icon",viewController: "ChatVC")]),
         Sections(type: .B, items:   [
+             Menu(title:    "Offer Service",imageName: "add_service",viewController: "AddServiceVC"),
             Menu(title:    "Help",imageName: "help_icon",viewController: "emailVC"),
             Menu(title:    "Login",imageName: "login_icon",viewController: "LoginController")])]
     
@@ -56,11 +57,33 @@ class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource,MFMa
         self.heroView.addGestureRecognizer(gestureRecognizer)
         self.revealViewController().rearViewRevealWidth  = self.view.frame.size.width - 60
         self.tableView.tableFooterView = UIView()
+        self.presenter  = UserPresenter()
+      
     }
     
     override  func viewWillAppear(_ animated: Bool) {
-       
+         self.presenter?.getProfile()
     }
+    
+    
+    
+    var presenter: UserPresenter? {
+        didSet {
+            presenter?.user.observe {
+                [unowned self] (results) in
+                if results.count > 0 {
+                     self.user = results
+                    let item =  self.user[0]
+                    self.lblName.text  = item.first_name + " " + item.last_name
+                    self.lblEmail.text  = item.email
+                    self.lblEmail.setNeedsLayout()
+                    self.lblName.setNeedsLayout()
+                }
+            }
+        }
+    }
+    
+    
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -143,11 +166,17 @@ class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource,MFMa
         alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default){ action in
             AuthenticationService.instance.isLoggedIn = false
+            AuthenticationService.instance.auth_token = ""
+            self.lblEmail.text  = ""
+            self.lblName.text = ""
+            self.lblName.setNeedsLayout()
+            self.lblEmail.setNeedsLayout()
             self.updateMenu()
             self.tableView.reloadData()
-            //
-            //            NotificationCenter.default.post(name: NSNotification.Name(rawValue: PopBack),object: nil)
-            //            NotificationCenter.default.post(name: NSNotification.Name(rawValue: LogoutUser),object: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let   vc = storyboard.instantiateViewController(withIdentifier: "ExploreVC")
+            self.revealViewController().setFront(vc, animated: true)
+        
         })
         self.present(alert, animated: true, completion: nil)
     }
@@ -186,6 +215,8 @@ class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource,MFMa
         return UIDevice.current.modelName
     }
     
+
+    
     @objc func updateMenu() {
         if AuthenticationService.instance.isLoggedIn {
             self.data = [
@@ -196,6 +227,7 @@ class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource,MFMa
                         Menu(title:    "Favourite",imageName: "favourite_icon",viewController: "FavouriteVC"),
                         Menu(title:    "Chat",imageName: "messages_icon",viewController: "ChatVC")]),
                 Sections(type: .B, items:   [
+                    Menu(title:    "Offer Service",imageName: "add_service",viewController: "AddServiceVC"),
                     Menu(title:    "Help",imageName: "help_icon",viewController: "emailVC"),
                     Menu(title:    "Logout",imageName: "logout_icon",viewController: "LoginController")])]
              self.lblEmail.text  = AuthenticationService.instance.userEmail
@@ -210,6 +242,8 @@ class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource,MFMa
                     Menu(title:    "Help",imageName: "help_icon",viewController: "emailVC"),
                     Menu(title:    "Login",imageName: "login_icon",viewController: "LoginController")])]
             self.lblEmail.text  = ""
+            self.lblName.text = ""
+            self.lblName.setNeedsLayout()
             self.lblEmail.setNeedsLayout()
         }
         

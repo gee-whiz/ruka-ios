@@ -13,9 +13,7 @@ import SwiftyJSON
 
 
 protocol StylistProtocol {
-    
     func getAllService( completion: @escaping ((StylistService.ServiceResult) -> Void) )
-    
 }
 
 
@@ -52,7 +50,7 @@ class StylistService: StylistProtocol {
                         let service = Service(_id: _id, name: name, price: price, address: address, latitude: latitude, email_address: email_address, phone: phone, service_description: service_description, image_uri: image_uri, available_time: available_time)
                         self.serviceList.append(service)
                     }
-                    completion(ServiceResult.Success(self.serviceList))
+                    completion(ServiceResult.Success(self.serviceList.reversed()))
                 }else{
                       debugPrint(response.result.error as Any)
                     completion(ServiceResult.Failure(DATA_ERROR))

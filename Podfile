@@ -16,6 +16,9 @@ target 'Ruka' do
       pod 'FacebookLogin'
       pod 'IQKeyboardManagerSwift'
       pod 'EmptyDataSet-Swift'
+       pod 'Cosmos'
+       pod 'MaterialComponents/BottomAppBar'
+       pod 'MaterialComponents/TextFields+Extensions'
  
 
 

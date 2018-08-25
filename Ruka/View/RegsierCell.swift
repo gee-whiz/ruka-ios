@@ -10,7 +10,7 @@ import UIKit
 import FacebookLogin
 import FBSDKLoginKit
 
-class RegsierCell: UITableViewCell {
+class RegsierCell: UITableViewCell,UITextFieldDelegate  {
 
     
     @IBOutlet weak var btnRegister: GradientButton!
@@ -19,7 +19,8 @@ class RegsierCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-      
+      self.edtPassword.delegate  = self
+      self.edtEmail.delegate  = self
     }
 
     
@@ -30,4 +31,18 @@ class RegsierCell: UITableViewCell {
         self.callRegister!()
     }
     
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.edtPassword.errorMessage  = ""
+        self.edtEmail.errorMessage = ""
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
+    }
 }
