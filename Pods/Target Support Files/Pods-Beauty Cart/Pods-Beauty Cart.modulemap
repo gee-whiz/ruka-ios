@@ -1,0 +1,6 @@
+framework module Pods_Beauty_Cart {
+  umbrella header "Pods-Beauty Cart-umbrella.h"
+
+  export *
+  module * { export * }
+}

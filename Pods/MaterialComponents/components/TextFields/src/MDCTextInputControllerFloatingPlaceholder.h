@@ -20,6 +20,23 @@
 @protocol MDCTextInputControllerFloatingPlaceholder <MDCTextInputController>
 
 /**
+ The color applied to the placeholder when floating and the text field is first responder. However,
+ when in error state, it will be colored with the error color.
+
+ Only relevent when floatingEnabled is true.
+
+ Default is floatingPlaceholderActiveColorDefault.
+ */
+@property(nonatomic, null_resettable, strong) UIColor *floatingPlaceholderActiveColor;
+
+/**
+ Default value for floatingPlaceholderActiveColor.
+
+ Default is activeColor.
+ */
+@property(class, nonatomic, null_resettable, strong) UIColor *floatingPlaceholderActiveColorDefault;
+
+/**
  The color applied to the placeholder when floating. However, when in error state, it will be
  colored with the error color and when in active state, it will be colored with the active color.
 
@@ -51,7 +68,7 @@
 
 /**
  Default value for the floating placeholder scale.
-
+ NOTE:Setting this value to 0 or lower would automatically set the scale to default.
  Default is 0.75.
  */
 @property(class, nonatomic, assign) CGFloat floatingPlaceholderScaleDefault;

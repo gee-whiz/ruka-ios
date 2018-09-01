@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18DEAE401A5AE2DA85306785 /* Pods_RukaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E05006E0C7B54E712ADBB1D /* Pods_RukaTests.framework */; };
-		4EB6E4C35C27C39F0683D277 /* Pods_Ruka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57DF91C44C5F6A0EDF19EFE /* Pods_Ruka.framework */; };
 		5E0C261F20744E5500CB363A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C261D20744E5500CB363A /* SWRevealViewController.m */; };
 		5E0C262020744E5500CB363A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C261D20744E5500CB363A /* SWRevealViewController.m */; };
 		5E0C262220744F4100CB363A /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C262120744F4100CB363A /* MenuVC.swift */; };
@@ -136,7 +134,7 @@
 		5EED5BF92078D4E200444958 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED5BF82078D4E200444958 /* ProfileCell.swift */; };
 		5EED5BFA2078D4E200444958 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED5BF82078D4E200444958 /* ProfileCell.swift */; };
 		5EED5BFB2078D4E200444958 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED5BF82078D4E200444958 /* ProfileCell.swift */; };
-		76BBFDB4E868AFBEE0F6F342 /* Pods_RukaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76B808FB6FCFEBACD276C4E /* Pods_RukaUITests.framework */; };
+		81B6D079A0B8C496C1CDC0D9 /* Pods_Beauty_Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0070819D7B73CAEB6F5E1519 /* Pods_Beauty_Cart.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,11 +155,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0070819D7B73CAEB6F5E1519 /* Pods_Beauty_Cart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beauty_Cart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0386BE6D8781F6BB4C973E34 /* Pods-Beauty Cart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beauty Cart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beauty Cart/Pods-Beauty Cart.debug.xcconfig"; sourceTree = "<group>"; };
+		0BD1ED8D51CFC45D7FE2CDFD /* Pods-Beauty Cart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beauty Cart.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beauty Cart/Pods-Beauty Cart.release.xcconfig"; sourceTree = "<group>"; };
 		1E05006E0C7B54E712ADBB1D /* Pods_RukaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RukaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E2574BEF659FEA4F7075011 /* Pods-Ruka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruka.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ruka/Pods-Ruka.debug.xcconfig"; sourceTree = "<group>"; };
-		24777BD31963E20A4576681F /* Pods-RukaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RukaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RukaTests/Pods-RukaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2822FB8088F1C25F2C29D152 /* Pods-RukaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RukaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RukaUITests/Pods-RukaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		42514703F5F87FADEDF1AEE5 /* Pods-RukaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RukaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RukaUITests/Pods-RukaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5E0C261B20744E5400CB363A /* Ruka-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ruka-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E0C261C20744E5400CB363A /* RukaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RukaTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E0C261D20744E5500CB363A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 		5EED5BF82078D4E200444958 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		B57DF91C44C5F6A0EDF19EFE /* Pods_Ruka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ruka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD36D22599D7172CA93D1451 /* Pods-Ruka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruka.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ruka/Pods-Ruka.release.xcconfig"; sourceTree = "<group>"; };
-		D01B2DC3982085CEBC907A6E /* Pods-RukaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RukaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RukaTests/Pods-RukaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D76B808FB6FCFEBACD276C4E /* Pods_RukaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RukaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -238,7 +235,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EB6E4C35C27C39F0683D277 /* Pods_Ruka.framework in Frameworks */,
+				81B6D079A0B8C496C1CDC0D9 /* Pods_Beauty_Cart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +243,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18DEAE401A5AE2DA85306785 /* Pods_RukaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +250,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76BBFDB4E868AFBEE0F6F342 /* Pods_RukaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,10 +261,8 @@
 			children = (
 				1E2574BEF659FEA4F7075011 /* Pods-Ruka.debug.xcconfig */,
 				BD36D22599D7172CA93D1451 /* Pods-Ruka.release.xcconfig */,
-				24777BD31963E20A4576681F /* Pods-RukaTests.debug.xcconfig */,
-				D01B2DC3982085CEBC907A6E /* Pods-RukaTests.release.xcconfig */,
-				2822FB8088F1C25F2C29D152 /* Pods-RukaUITests.debug.xcconfig */,
-				42514703F5F87FADEDF1AEE5 /* Pods-RukaUITests.release.xcconfig */,
+				0386BE6D8781F6BB4C973E34 /* Pods-Beauty Cart.debug.xcconfig */,
+				0BD1ED8D51CFC45D7FE2CDFD /* Pods-Beauty Cart.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -433,6 +426,7 @@
 				B57DF91C44C5F6A0EDF19EFE /* Pods_Ruka.framework */,
 				1E05006E0C7B54E712ADBB1D /* Pods_RukaTests.framework */,
 				D76B808FB6FCFEBACD276C4E /* Pods_RukaUITests.framework */,
+				0070819D7B73CAEB6F5E1519 /* Pods_Beauty_Cart.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -463,7 +457,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E19CCF320573A0D00AF5BBF /* Build configuration list for PBXNativeTarget "RukaTests" */;
 			buildPhases = (
-				0D377D7885E68B21C11FB7E8 /* [CP] Check Pods Manifest.lock */,
 				5E19CCD820573A0D00AF5BBF /* Sources */,
 				5E19CCD920573A0D00AF5BBF /* Frameworks */,
 				5E19CCDA20573A0D00AF5BBF /* Resources */,
@@ -482,7 +475,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E19CCF620573A0D00AF5BBF /* Build configuration list for PBXNativeTarget "RukaUITests" */;
 			buildPhases = (
-				2F77AAE807305FC93C0B1CBE /* [CP] Check Pods Manifest.lock */,
 				5E19CCE320573A0D00AF5BBF /* Sources */,
 				5E19CCE420573A0D00AF5BBF /* Frameworks */,
 				5E19CCE520573A0D00AF5BBF /* Resources */,
@@ -510,7 +502,7 @@
 					5E19CCC420573A0D00AF5BBF = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					5E19CCDB20573A0D00AF5BBF = {
 						CreatedOnToolsVersion = 9.2;
@@ -574,24 +566,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D377D7885E68B21C11FB7E8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RukaTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		126E0F30FDB0114642F0D3C9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,25 +577,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Ruka-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2F77AAE807305FC93C0B1CBE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RukaUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Beauty Cart-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -634,7 +590,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Ruka/Pods-Ruka-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Beauty Cart/Pods-Beauty Cart-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
@@ -643,10 +599,12 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GrowingTextView/GrowingTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -660,16 +618,18 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GrowingTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ruka/Pods-Ruka-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Beauty Cart/Pods-Beauty Cart-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -963,20 +923,20 @@
 		};
 		5E19CCF120573A0D00AF5BBF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E2574BEF659FEA4F7075011 /* Pods-Ruka.debug.xcconfig */;
+			baseConfigurationReference = 0386BE6D8781F6BB4C973E34 /* Pods-Beauty Cart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ECA Internet (PTY) LTD";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ECA Internet (PTY) LTD";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = XG8766C4Q9;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8D95266BE;
 				INFOPLIST_FILE = Ruka/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.immediaenterprise.fabrik.bencap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c86b7708-52f9-4e07-9e36-38cce027c3d3";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ruka/Controller/Ruka-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -987,20 +947,20 @@
 		};
 		5E19CCF220573A0D00AF5BBF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD36D22599D7172CA93D1451 /* Pods-Ruka.release.xcconfig */;
+			baseConfigurationReference = 0BD1ED8D51CFC45D7FE2CDFD /* Pods-Beauty Cart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ECA Internet (PTY) LTD";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ECA Internet (PTY) LTD";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = XG8766C4Q9;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8D95266BE;
 				INFOPLIST_FILE = Ruka/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.immediaenterprise.fabrik.bencap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c86b7708-52f9-4e07-9e36-38cce027c3d3";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ruka/Controller/Ruka-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -1010,7 +970,6 @@
 		};
 		5E19CCF420573A0D00AF5BBF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24777BD31963E20A4576681F /* Pods-RukaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1030,7 +989,6 @@
 		};
 		5E19CCF520573A0D00AF5BBF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D01B2DC3982085CEBC907A6E /* Pods-RukaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1049,7 +1007,6 @@
 		};
 		5E19CCF720573A0D00AF5BBF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2822FB8088F1C25F2C29D152 /* Pods-RukaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1065,7 +1022,6 @@
 		};
 		5E19CCF820573A0D00AF5BBF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42514703F5F87FADEDF1AEE5 /* Pods-RukaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

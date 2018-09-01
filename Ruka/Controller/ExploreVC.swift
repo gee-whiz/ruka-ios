@@ -15,12 +15,13 @@ import MaterialComponents.MaterialBottomAppBar
 private let reuseIdentifier = "ExploreCell"
 
 
-class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, EmptyDataSetSource, EmptyDataSetDelegate {
+class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UISearchBarDelegate, EmptyDataSetSource, EmptyDataSetDelegate {
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     var serviceList = [Service]()
     var activityIndicator = UIActivityIndicatorView()
+     var searchController = UISearchController()
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnMenu: UIButton!
     var service:Service!
@@ -30,9 +31,7 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         self.activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge, color: .gray,  placeInTheCenterOf: view)
         self.collectionView.emptyDataSetSource  = self
         self.collectionView.emptyDataSetDelegate  = self
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-        btnMenu.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+        self.setupView()
         self.collectionView.delegate  = self
         screenSize = UIScreen.main.bounds
         screenWidth = self.screenSize.width
@@ -73,7 +72,7 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     @IBAction func btnAddTapped(_ sender: Any) {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let   vc = storyboard.instantiateViewController(withIdentifier: "AddServiceVC")
-            self.revealViewController().setFront(vc, animated: true)
+            self.present(vc, animated: true, completion: nil)
     }
     
     
@@ -107,9 +106,7 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         return CGSize(width: self.screenWidth - 16 , height: 245)
     }
     
-    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
-        return  #imageLiteral(resourceName: "barber_33118_640")
-    }
+
 
 
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
@@ -143,6 +140,30 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         
     }
     
+    
+    func setupView() {
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
+            self.navigationItem.searchController = self.searchController
+            
+        } else {
+            // Fallback on earlier versions
+        }
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.searchController.searchBar.delegate  = self
+        if #available(iOS 11.0, *) {
+            self.navigationItem.searchController = self.searchController
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 11.0, *) {
+            self.navigationItem.hidesSearchBarWhenScrolling = false
+        } else {
+            // Fallback on earlier versions
+        }
+        
+    }
     
     func setupBootomBar() {
         let frame = CGRect(x: 0, y: self.view.frame.height - 100, width: self.view.frame.width, height: 50.0)

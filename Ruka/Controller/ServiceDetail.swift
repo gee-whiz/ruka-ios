@@ -26,6 +26,12 @@ class ServiceDetail: UIViewController,  UITableViewDelegate, UITableViewDataSour
       
         let headerView: ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderView(with: imageView.image, for: CGSize(width: self.tableView.frame.size.width, height: self.tableView.frame.size.height / 2)) as! ParallaxHeaderView
         self.tableView.tableHeaderView = headerView
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = false
+        } else {
+            // Fallback on earlier versions
+        }
+        
         
     }
 
@@ -34,6 +40,13 @@ class ServiceDetail: UIViewController,  UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
+    override  func viewWillDisappear(_ animated: Bool) {
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.title  = self.service.name
@@ -82,19 +95,19 @@ class ServiceDetail: UIViewController,  UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    
-    @IBAction func btnChatTapped(_ sender: Any) {
-        if !(AuthenticationService.instance.isLoggedIn) {
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let   vc = storyboard.instantiateViewController(withIdentifier: "LoginController")
-            self.present(vc, animated: true, completion: nil)
-        }else{
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let   vc = storyboard.instantiateViewController(withIdentifier: "ChatVC")
-            self.revealViewController().setFront(vc, animated: true)
-        }
-     
-    }
+//    
+//    @IBAction func btnChatTapped(_ sender: Any) {
+//        if !(AuthenticationService.instance.isLoggedIn) {
+//            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//            let   vc = storyboard.instantiateViewController(withIdentifier: "LoginController")
+//            self.present(vc, animated: true, completion: nil)
+//        }else{
+//            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//            let   vc = storyboard.instantiateViewController(withIdentifier: "ChatVC")
+//            self.revealViewController().setFront(vc, animated: true)
+//        }
+//     
+//    }
     
     
     func  scrollViewDidScroll(_ scrollView: UIScrollView) {

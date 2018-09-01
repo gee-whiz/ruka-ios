@@ -25,8 +25,10 @@
 #import "MaterialTypography.h"
 
 
+static const NSUInteger kTitleFontSize = 20;
 static const CGFloat kNavigationBarDefaultHeight = 56;
 static const CGFloat kNavigationBarPadDefaultHeight = 64;
+static const CGFloat kNavigationBarMinHeight = 24;
 static const UIEdgeInsets kTextInsets = {16, 16, 16, 16};
 static const UIEdgeInsets kTextPadInsets = {20, 16, 20, 16};
 
@@ -119,6 +121,7 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
 
 @interface MDCNavigationBar (PrivateAPIs)
 
+/// titleLabel is hidden if there is a titleView. When not hidden, displays self.title.
 - (UILabel *)titleLabel;
 - (MDCButtonBar *)leadingButtonBar;
 - (MDCButtonBar *)trailingButtonBar;
@@ -149,9 +152,10 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
 
 - (void)commonMDCNavigationBarInit {
   _observedNavigationItemLock = [[NSObject alloc] init];
+  _titleFont = [MDCTypography titleFont];
 
   _titleLabel = [[UILabel alloc] init];
-  _titleLabel.font = [MDCTypography titleFont];
+  _titleLabel.font = _titleFont;
   _titleLabel.accessibilityTraits |= UIAccessibilityTraitHeader;
   _titleLabel.textAlignment = NSTextAlignmentCenter;
   _leadingButtonBar = [[MDCButtonBar alloc] init];
@@ -220,6 +224,8 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
   self = [super initWithFrame:frame];
   if (self) {
     [self commonMDCNavigationBarInit];
+    _leadingButtonBar.backgroundColor = nil;
+    _trailingButtonBar.backgroundColor = nil;
   }
   return self;
 }
@@ -256,6 +262,22 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
   [aCoder encodeBool:self.leadingItemsSupplementBackButton
               forKey:MDCNavigationBarLeadingButtonSupplementsBackButtonKey];
   [aCoder encodeInteger:self.titleAlignment forKey:MDCNavigationBarTitleAlignmentKey];
+}
+
+- (void)setTitleFont:(UIFont *)titleFont {
+  _titleFont = [UIFont fontWithDescriptor:titleFont.fontDescriptor size:kTitleFontSize];
+  if (!_titleFont) {
+    _titleFont = [MDCTypography titleFont];
+  }
+  _titleLabel.font = _titleFont;
+}
+
+- (void)setTitleTextColor:(UIColor *)titleTextColor {
+  _titleLabel.textColor = titleTextColor;
+}
+
+- (UIColor *)titleTextColor {
+  return _titleLabel.textColor;
 }
 
 #pragma mark Accessibility
@@ -321,7 +343,12 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
   _trailingButtonBar.frame = trailingButtonBarFrame;
 
   UIEdgeInsets textInsets = [self usePadInsets] ? kTextPadInsets : kTextInsets;
+  if (self.useFlexibleTopBottomInsets) {
+    textInsets.top = 0;
+    textInsets.bottom = 0;
+  }
 
+  // textFrame is used to determine layout of both TitleLabel and TitleView
   CGRect textFrame = UIEdgeInsetsInsetRect(self.bounds, textInsets);
   textFrame.origin.x += _leadingButtonBar.frame.size.width;
   textFrame.size.width -= _leadingButtonBar.frame.size.width + _trailingButtonBar.frame.size.width;
@@ -332,6 +359,7 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
   }
 #endif
 
+  // Layout TitleLabel
   NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
   paraStyle.lineBreakMode = _titleLabel.lineBreakMode;
 
@@ -354,9 +382,24 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
                                             withinBounds:textFrame
                                                alignment:titleVerticalAlignment];
   alignedFrame = [self mdc_frameAlignedHorizontally:alignedFrame alignment:self.titleAlignment];
-
   _titleLabel.frame = MDCRectAlignToScale(alignedFrame, self.window.screen.scale);
-  self.titleView.frame = textFrame;
+
+  // Layout TitleView
+  if (self.mdf_effectiveUserInterfaceLayoutDirection == UIUserInterfaceLayoutDirectionRightToLeft) {
+    textFrame = MDFRectFlippedHorizontally(textFrame, CGRectGetWidth(self.bounds));
+  }
+
+  CGRect titleViewFrame = textFrame;
+  if (self.useFlexibleTopBottomInsets) {
+    // No insets for the titleView, and a height that is the same as the button bars. Clients
+    // can vertically center their titleView subviews to align them with buttons.
+    titleViewFrame.origin.y = 0;
+    CGFloat maxHeight =
+        [self usePadInsets] ? kNavigationBarPadDefaultHeight : kNavigationBarDefaultHeight;
+    CGFloat minHeight = kNavigationBarMinHeight;
+    titleViewFrame.size.height = MIN(MAX(self.bounds.size.height, minHeight), maxHeight);
+  }
+  self.titleView.frame = titleViewFrame;
 
   // Button and title label alignment
 
@@ -377,13 +420,16 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
-  CGSize intrinsicContentSize = [self intrinsicContentSize];
-  return CGSizeMake(size.width, intrinsicContentSize.height);
+  CGFloat maxHeight =
+      [self usePadInsets] ? kNavigationBarPadDefaultHeight : kNavigationBarDefaultHeight;
+  CGFloat minHeight = kNavigationBarMinHeight;
+  CGFloat height =
+      self.useFlexibleTopBottomInsets ? MIN(MAX(size.height, minHeight), maxHeight) : maxHeight;
+  return CGSizeMake(size.width, height);
 }
 
 - (CGSize)intrinsicContentSize {
-
-  CGFloat height = ([self usePadInsets] ? kNavigationBarPadDefaultHeight : kNavigationBarDefaultHeight);
+  CGFloat height = [self usePadInsets] ? kNavigationBarPadDefaultHeight : kNavigationBarDefaultHeight;
   return CGSizeMake(UIViewNoIntrinsicMetric, height);
 }
 
@@ -498,8 +544,11 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
     case UIControlContentVerticalAlignmentTop: {
       // The title frame is vertically centered with the back button but will stick to the top of
       // the header regardless of the header's height.
-      CGFloat navigationBarCenteredY =
-          MDCFloor(([self intrinsicContentSize].height - CGRectGetHeight(frame)) / 2);
+      CGFloat maxHeight =
+          [self usePadInsets] ? kNavigationBarPadDefaultHeight : kNavigationBarDefaultHeight;
+      CGFloat height =
+          self.useFlexibleTopBottomInsets ? MIN(CGRectGetHeight(bounds), maxHeight) : maxHeight;
+      CGFloat navigationBarCenteredY = MDCFloor((height - CGRectGetHeight(frame)) / 2);
       navigationBarCenteredY = MAX(0, navigationBarCenteredY);
       return CGRectMake(CGRectGetMinX(frame), navigationBarCenteredY, CGRectGetWidth(frame),
                         CGRectGetHeight(frame));
@@ -522,6 +571,10 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
       MDCButtonBar *leftButtonBar = self.leadingButtonBar;
       MDCButtonBar *rightButtonBar = self.trailingButtonBar;
       UIEdgeInsets textInsets = [self usePadInsets] ? kTextPadInsets : kTextInsets;
+      if (self.useFlexibleTopBottomInsets) {
+        textInsets.top = 0;
+        textInsets.bottom = 0;
+      }
       CGFloat titleLeftInset = textInsets.left;
       CGFloat titleRightInset = textInsets.right;
 
@@ -624,10 +677,13 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
 
   [self.titleView removeFromSuperview];
   _titleView = titleView;
-  [self addSubview:_titleView];
+
+  if (_titleView != nil) {
+    [self addSubview:_titleView];
+  }
 
   _titleLabel.hidden = _titleView != nil;
-
+    
   [self setNeedsLayout];
 }
 
@@ -651,6 +707,24 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
     }
     [self setNeedsLayout];
   }
+}
+
+- (void)setButtonsTitleFont:(UIFont *)font forState:(UIControlState)state {
+  [_leadingButtonBar setButtonsTitleFont:font forState:state];
+  [_trailingButtonBar setButtonsTitleFont:font forState:state];
+}
+
+- (UIFont *)buttonsTitleFontForState:(UIControlState)state {
+  return [_leadingButtonBar buttonsTitleFontForState:state];
+}
+
+- (void)setButtonsTitleColor:(UIColor *)color forState:(UIControlState)state {
+  [_leadingButtonBar setButtonsTitleColor:color forState:state];
+  [_trailingButtonBar setButtonsTitleColor:color forState:state];
+}
+
+- (UIColor *)buttonsTitleColorForState:(UIControlState)state {
+  return [_leadingButtonBar buttonsTitleColorForState:state];
 }
 
 - (void)setLeadingBarButtonItems:(NSArray<UIBarButtonItem *> *)leadingBarButtonItems {
@@ -714,6 +788,15 @@ static NSString *const MDCNavigationBarTitleAlignmentKey = @"MDCNavigationBarTit
   _leadingItemsSupplementBackButton = leadingItemsSupplementBackButton;
   _leadingButtonBar.items = [self mdc_buttonItemsForLeadingBar];
   [self setNeedsLayout];
+}
+
+- (void)setInkColor:(UIColor *)inkColor {
+  if (_inkColor == inkColor) {
+    return;
+  }
+  _inkColor = inkColor;
+  _leadingButtonBar.inkColor = inkColor;
+  _trailingButtonBar.inkColor = inkColor;
 }
 
 - (void)setObservedNavigationItem:(UINavigationItem *)navigationItem {

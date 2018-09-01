@@ -7,28 +7,39 @@
 //
 
 import UIKit
+import GrowingTextView
 
 class ProfileCell: UITableViewCell, UITextFieldDelegate, UITextViewDelegate {
-    @IBOutlet weak var edtFirstName: FloatingLabelTextField!
+    @IBOutlet weak var edtFirstName: UITextField!
     
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var edtAbout: GrowingTextView!
+    @IBOutlet weak var edtText: UITextField!
     
-    @IBOutlet  var edtAbout: UIFloatLabelTextView!
-    @IBOutlet weak var edtPhone: UITextField!
-    @IBOutlet weak var edtEmail: UITextField!
-    @IBOutlet weak var edtLastName: UITextField!
+//    @IBOutlet weak var edtAbout: GrowingTextView!
+//
+//    @IBOutlet weak var edtPhone: UITextField!
+//    @IBOutlet weak var edtEmail: UITextField!
+//    @IBOutlet weak var edtLastName: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.edtEmail.delegate  = self
-        self.edtAbout.delegate = self
-        self.edtPhone.delegate  = self
-        self.edtLastName.delegate  = self
-        self.edtFirstName.delegate  = self
+       // self.edtText.delegate  = self
         
-       self.edtAbout.placeholder = "ABOUT"
-        self.edtAbout.translatesAutoresizingMaskIntoConstraints = false
-        self.edtAbout.placeholderTextColor = UIColor.lightGray
-        self.edtAbout.floatLabelActiveColor = #colorLiteral(red: 0.9537598491, green: 0.2608756125, blue: 0.4666399956, alpha: 1)
+//        self.edtEmail.delegate  = self
+//        self.edtAbout.delegate = self
+//        self.edtPhone.delegate  = self
+//        self.edtLastName.delegate  = self
+//        self.edtFirstName.delegate  = self
+//        self.edtEmail.applyBorder()
+//        self.edtFirstName.applyBorder()
+//        self.edtLastName.applyBorder()
+//        self.edtPhone.applyBorder()
+//        self.edtAbout.placeholder  =  "Comments"
+//        self.edtAbout.layer.cornerRadius  = 5.0
+//        self.edtAbout.layer.borderWidth  = 1.0
+//        self.edtAbout.layer.borderColor  = #colorLiteral(red: 0.3082081974, green: 0.1841563582, blue: 0.1004526243, alpha: 1).cgColor.copy(alpha: 1)
+        
         
     }
 
@@ -39,7 +50,7 @@ class ProfileCell: UITableViewCell, UITextFieldDelegate, UITextViewDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
-        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? FloatingLabelTextField {
             nextField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()

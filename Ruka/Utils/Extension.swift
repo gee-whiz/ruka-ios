@@ -27,11 +27,22 @@ extension UIActivityIndicatorView {
     convenience init(activityIndicatorStyle: UIActivityIndicatorViewStyle, color: UIColor, placeInTheCenterOf parentView: UIView) {
         self.init(activityIndicatorStyle: activityIndicatorStyle)
         center = parentView.center
-        self.color = #colorLiteral(red: 0.9537598491, green: 0.2608756125, blue: 0.4666399956, alpha: 1)
+        self.color = #colorLiteral(red: 0.3082081974, green: 0.1841563582, blue: 0.1004526243, alpha: 1)
         parentView.addSubview(self)
     }
 }
 
+extension  UITextField {
+    func applyBorder () {
+        self.layer.borderColor  = #colorLiteral(red: 0.3082081974, green: 0.1841563582, blue: 0.1004526243, alpha: 1)
+        self.layer.borderColor  =  #colorLiteral(red: 0.3082081974, green: 0.1841563582, blue: 0.1004526243, alpha: 1)
+        self.layer.borderWidth  = 1.0
+        self.layer.borderWidth  = 1.0
+        self.layer.cornerRadius  = 5.0
+        self.layer.cornerRadius  = 5.0
+        
+    }
+}
 public extension UIDevice {
     
     var modelName: String {

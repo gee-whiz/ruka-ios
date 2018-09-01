@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import GrowingTextView
 
 class AddServiceCell: UITableViewCell , UITextFieldDelegate, UITextViewDelegate{
-    @IBOutlet weak var edtAbout: UIFloatLabelTextView!
+   
     
+    
+    @IBOutlet weak var edtTitle: UITextField!
+    @IBOutlet weak var edtAbout: GrowingTextView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.edtAbout.placeholder = "DESCRIPTION"
-        self.edtAbout.translatesAutoresizingMaskIntoConstraints = false
-        self.edtAbout.placeholderTextColor = UIColor.lightGray
-        self.edtAbout.floatLabelActiveColor = #colorLiteral(red: 0.9537598491, green: 0.2608756125, blue: 0.4666399956, alpha: 1)
+        self.edtAbout.placeholder  =  "Description"
+        self.edtAbout.layer.cornerRadius  = 5.0
+        self.edtAbout.layer.borderWidth  = 1.0
+        self.edtAbout.layer.borderColor  = #colorLiteral(red: 0.3082081974, green: 0.1841563582, blue: 0.1004526243, alpha: 1).cgColor.copy(alpha: 1)
+        self.edtTitle.applyBorder()
     }
 
 

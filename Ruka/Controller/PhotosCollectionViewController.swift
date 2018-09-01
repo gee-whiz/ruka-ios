@@ -40,6 +40,20 @@ class PhotosCollectionViewController: UICollectionViewController {
         return cell
     }
 
-
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+     
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var numberOfClumns: CGFloat = 3
+        if UIScreen.main.bounds.width  > 320 {
+            numberOfClumns = 3
+        }
+        let spaceBetweenCells:CGFloat = 8
+        let padding:CGFloat = 40
+        let cellDimension = ((collectionView.bounds.width - padding) - (numberOfClumns - 1) * spaceBetweenCells) / numberOfClumns
+        return CGSize(width: cellDimension, height: cellDimension)
+    }
+    
 
 }
