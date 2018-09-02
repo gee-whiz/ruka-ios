@@ -10,9 +10,10 @@ import UIKit
 
 class ExploreCell: UICollectionViewCell {
     @IBOutlet weak var lblName: UILabel!
-    
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var imgService: UIImageView!
+    
+
 }

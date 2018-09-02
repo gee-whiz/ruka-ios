@@ -18,5 +18,6 @@ target 'Beauty Cart' do
        pod 'MaterialComponents/TextFields+Extensions'
         pod 'GrowingTextView'
       pod 'RSKImageCropper'
-
+     pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :branch => 'master'
+      pod 'BSImagePicker'
 end

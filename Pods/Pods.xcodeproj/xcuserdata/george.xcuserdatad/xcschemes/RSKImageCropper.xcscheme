@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "76AE2CE5FC48212A0DE8587DFE0EC491"
+               BlueprintIdentifier = "6F04F88469A6A56E5279B369CCCDCFFF"
                BlueprintName = "RSKImageCropper"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "RSKImageCropper.framework">

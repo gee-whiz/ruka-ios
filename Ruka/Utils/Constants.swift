@@ -23,12 +23,15 @@ let LOGIN_URL = "\(BASE_URL)account/login"
 let REGISTER_URL = "\(BASE_URL)account/register"
 
 let ALL_SERVICE_URL = "\(BASE_URL)service"
+let ADD_SERVICE_URL = "\(BASE_URL)service/add"
 
 let GET_PROFILE_URL = "\(BASE_URL)profile/byEmail/"
 
 let ADD_PROFILE_URL = "\(BASE_URL)profile/add"
 
 let UPDATE_PROFILE_URL = "\(BASE_URL)profile/"
+
+let ADD_IMAGE_URL = "\(BASE_URL)server/upload"
 
 let HAS_SEEN_ON_BOARD  = "HAS_SEEN_ON_BOARD"
 let LOGGED_IN_KEY = "loggedin"
@@ -37,6 +40,7 @@ let USER_NAME = "user_name"
 let USER_TOKEN  = "auth_token"
 let USER_ID  = "user_id"
 let UPDATEPROFILE = "UPDATE_PROFILE"
+let RELOAD  = "reload"
 //Headers
 let HEADER = [
     "Content-Type": "application/json; charset=utf-8"

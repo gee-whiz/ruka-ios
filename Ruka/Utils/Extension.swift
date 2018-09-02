@@ -23,6 +23,38 @@ extension UITextField {
     }
 }
 
+extension UITextField {
+    func setBottomBorderOnlyWith(color: CGColor) {
+        self.borderStyle =  .none
+        let border = CALayer()
+        let width = CGFloat(1.0)
+        border.borderColor = color
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width,   width:  self.frame.size.width, height: self.frame.size.height)
+        
+        border.borderWidth = width
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+    }
+}
+
+extension UITextField {
+    func isError(baseColor: CGColor, numberOfShakes shakes: Float, revert: Bool) {
+        let animation: CABasicAnimation = CABasicAnimation(keyPath: "shadowColor")
+        animation.fromValue = baseColor
+        animation.toValue = UIColor.red.cgColor
+        animation.duration = 0.4
+        if revert { animation.autoreverses = true } else { animation.autoreverses = false }
+        self.layer.add(animation, forKey: "")
+        
+        let shake: CABasicAnimation = CABasicAnimation(keyPath: "position")
+        shake.duration = 0.07
+        shake.repeatCount = shakes
+        if revert { shake.autoreverses = true  } else { shake.autoreverses = false }
+        shake.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 10, y: self.center.y))
+        shake.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 10, y: self.center.y))
+        self.layer.add(shake, forKey: "position")
+    }
+}
 extension UIActivityIndicatorView {
     convenience init(activityIndicatorStyle: UIActivityIndicatorViewStyle, color: UIColor, placeInTheCenterOf parentView: UIView) {
         self.init(activityIndicatorStyle: activityIndicatorStyle)
@@ -117,6 +149,7 @@ extension UITextField {
     
 }
 
+
 extension String {
     
     //To check text field or String is blank or not
@@ -138,7 +171,38 @@ extension String {
     }
 }
 
+extension UIImageView {
+    
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
+    
+}
 
+extension UIImageView {
+    func roundTop(radius:CGFloat = 5){
+        self.clipsToBounds = true
+        self.layer.cornerRadius = radius
+        if #available(iOS 11.0, *) {
+            self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
+    func roundBottom(radius:CGFloat = 5){
+        self.clipsToBounds = true
+        self.layer.cornerRadius = radius
+        if #available(iOS 11.0, *) {
+            self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+}
 extension UIButton {
     func loadingIndicator(show: Bool) {
         if show {
@@ -158,3 +222,16 @@ extension UIButton {
         }
     }
 }
+
+extension UINavigationController {
+    func backToViewController(viewController: Swift.AnyClass) {
+        for element in viewControllers as Array {
+            if element.isKind(of: viewController) {
+                self.popToViewController(element, animated: false)
+                break
+            }
+        }
+    }
+}
+
+

@@ -17,6 +17,7 @@ protocol UserProtocol {
     func getProfile( completion: @escaping ((UserService.UserResult) -> Void) )
     func updateUser(email: String,first_name: String,last_name: String,about: String,phone: String, profile_image_uri: String, completion: @escaping ((UserService.createResult) -> Void) )
     func createUser(email: String, completion: @escaping ((UserService.createResult) -> Void) )
+    func updateProfilePic(imageData: Data?,completion: @escaping ((UserService.createResult) -> Void) )
     
 }
 
@@ -131,8 +132,6 @@ class UserService: UserProtocol {
             "Authorization":"Bearer \(AuthenticationService.instance.auth_token)",
             "Content-Type": "application/json; charset=utf-8"
         ]
-        
-     
         Alamofire.request(ADD_PROFILE_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers:  BEARER_HEADER).responseJSON { (response) in
             if response.result.error == nil {
                  debugPrint(response.result)
@@ -149,6 +148,40 @@ class UserService: UserProtocol {
     
     }
     
+    func updateProfilePic(imageData: Data?, completion: @escaping ((UserService.createResult) -> Void)) {
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
 
+            if let data = imageData{
+                multipartFormData.append(data, withName: "file", fileName: "image.png", mimeType: "image/png")
+            }
+            
+        }, usingThreshold: UInt64.init(), to: ADD_IMAGE_URL, method: .post, headers: AUTH_HEADER) { (result) in
+            switch result{
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    
+                    guard let data = response.data else {return}
+                    
+                    let json = JSON(data: data)
+                    debugPrint(json)
+                    print("Succesfully uploaded ", response)
+                    if let err = response.error{
+                        completion(createResult.Failure(err.localizedDescription))
+                        return
+                    }
+                    _ = json["message"].stringValue
+                    _ = json["err_msg"].stringValue
+                    let fileUrl = json["fileUrl"].stringValue
+                    completion(createResult.Success(fileUrl.lowercased()))
+                    
+                }
+            case .failure(let error):
+                print("Error in upload: \(error.localizedDescription)")
+                completion(createResult.Failure(error.localizedDescription))
+            }
+        }
+    }
+    
+    
 
 }

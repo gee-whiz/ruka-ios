@@ -11,15 +11,15 @@ import GrowingTextView
 import RSKImageCropper
 
 
-struct Profile {
+struct DynamicField {
     var title: String!
     var value: String!
     var tag: Int
-    
+    var keyType: UIKeyboardType!
     
 }
 
-class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControllerDelegate, UITableViewDataSource,UITextFieldDelegate,UINavigationControllerDelegate, UITextViewDelegate {
+class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControllerDelegate, UITableViewDataSource,UITextFieldDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate, UITextViewDelegate {
 
     @IBOutlet weak var imgProfile: CircleImage!
     @IBOutlet weak var btnDone: UIButton!
@@ -27,11 +27,11 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
     @IBOutlet weak var btnMenu: UIButton!
      var activityIndicator = UIActivityIndicatorView()
     var user  = [User]()
-    var data = [Profile(title:    "First Name",value: "", tag: 0),
-                Profile(title:    "Last Name",value: "",tag: 1),
-                Profile(title:    "Email",value: "",tag: 2),
-                Profile(title:    "Phone",value: "",tag: 3),
-                Profile(title:    "About",value: "", tag: 4)]
+    var data = [DynamicField(title:    "First Name",value: "", tag: 0,keyType: UIKeyboardType.default),
+                DynamicField(title:    "Last Name",value: "",tag: 1,keyType: UIKeyboardType.default),
+                DynamicField(title:    "Email",value: "",tag: 2,keyType: UIKeyboardType.emailAddress),
+                DynamicField(title:    "Phone",value: "",tag: 3,keyType: UIKeyboardType.phonePad),
+                DynamicField(title:    "About",value: "", tag: 4, keyType: UIKeyboardType.default )]
     
     var email: String = ""
     var first_name = ""
@@ -53,6 +53,8 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
         self.presenter?.getProfile()
         self.tableView.rowHeight = 50
         self.tableView.estimatedRowHeight =  50
+        self.imageCropVC.delegate = self
+        self.picker.delegate = self
         
     }
 
@@ -65,11 +67,15 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
                 [unowned self] (results) in
                 self.user = results.count > 0 ? results : []
                 if results.count > 0 {
-                       self.data = [Profile(title:    "First Name",value: self.user[0].first_name,tag: 0),
-                                    Profile(title:    "Last Name",value: self.user[0].last_name,tag: 1),
-                                    Profile(title:    "Email",value: self.user[0].email,tag: 2),
-                                    Profile(title:    "Phone",value: self.user[0].phone,tag: 3),
-                                    Profile(title:    "About",value: self.user[0].about,tag: 4)]
+                    self.imgProfile.sd_setImage(with: URL(string: self.user[0].profile_image_uri), placeholderImage: UIImage(named: "avatar_placeholder"))
+                    self.profile_image_uri =  self.user[0].profile_image_uri
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue:  LOGGED_IN_KEY),object: nil)
+                    self.imgProfile.setNeedsLayout()
+                       self.data = [DynamicField(title:    "First Name",value: self.user[0].first_name,tag: 0,keyType: UIKeyboardType.default),
+                                    DynamicField(title:    "Last Name",value: self.user[0].last_name,tag: 1,keyType: UIKeyboardType.default),
+                                    DynamicField(title:    "Email",value: self.user[0].email,tag: 2,keyType: UIKeyboardType.default),
+                                    DynamicField(title:    "Phone",value: self.user[0].phone,tag: 3,keyType: UIKeyboardType.phonePad),
+                                    DynamicField(title:    "About",value: self.user[0].about,tag: 4,keyType: UIKeyboardType.default)]
                 }
                 self.tableView.reloadData()
                 self.activityIndicator.stopAnimating()
@@ -86,6 +92,14 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
                 
             }
             
+            presenter?.profilePicUrl.observe({ (url) in
+                if url.count > 0 {
+                    self.profile_image_uri = url
+                    self.presenter?.updateUser(email:  self.data[2].value , first_name:  self.data[0].value , last_name:  self.data[1].value , about: self.data[4].value , phone:  self.data[3].value , profile_image_uri: url)
+                }
+                
+            })
+            
             presenter?.updateMsg.observe { (msg) in
                 self.view.setNeedsLayout()
                 if msg.count > 0 {
@@ -94,6 +108,8 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
                     self.showMessage(msg, type: .success)
                 }
             }
+            
+            
         }
     }
     
@@ -113,13 +129,13 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         if indexPath.section == 0 {
             return  60
         }
-        return  80
+        return  100
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let frame = CGRect(x: 0, y: 0, width: 15, height: 15)
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
             let item = self.data[indexPath.row]
@@ -130,6 +146,8 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
             cell.edtText.tag  = item.tag
             cell.lblTitle.text = item.title
             cell.edtText.text = item.value
+            cell.edtText.AddIcon(direction: .Right, imageName: "icon_edit", Frame: frame, backgroundColor: .clear)
+            cell.edtText.keyboardType  = item.keyType
              return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "profileAboutCell", for: indexPath) as! ProfileCell
@@ -141,6 +159,7 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
             cell.edtAbout.tag  = item.tag
             cell.lblTitle.text = item.title
             cell.edtAbout.text  = item.value
+            cell.edtAbout.keyboardType = item.keyType
              return cell
         }
     }
@@ -148,14 +167,14 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
     @IBAction func btnCamera(_ sender: Any) {
         self.showActionSheet()
     }
+    
     @IBAction func btnDoneTapped(_ sender: Any) {
-        
         if btnDone.titleLabel?.text == "Done" {
              self.view.endEditing(true)
             self.presenter?.updateUser(email:  self.data[2].value , first_name:  self.data[0].value , last_name:  self.data[1].value , about: self.data[4].value , phone:  self.data[3].value , profile_image_uri: self.profile_image_uri)
             self.btnDone.setTitle("", for: .normal)
             self.btnDone.loadingIndicator(show: true)
-           
+            self.activityIndicator.startAnimating()
             self.resignFirstResponder()
         }else{
             let allTextField = getTextfield(view: self.view)
@@ -233,11 +252,15 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
     func imageCropViewController(_ controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect, rotationAngle: CGFloat) {
         self.pfImage = croppedImage
         let data = UIImageJPEGRepresentation(self.pfImage, 0.5)! as NSData
-//        self.saveImage(image: data)
+        self.saveImage(image: data)
         self.btnDone.isEnabled   = true
         self.imageCropVC.dismiss(animated: true, completion: nil)
     }
     
+    func saveImage(image: NSData ) {
+        self.activityIndicator.startAnimating()
+        self.presenter?.updateProfilePic(imageData: image as Data)
+    }
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -271,12 +294,6 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
             self.present(self.picker, animated: true, completion: nil)
         })
         
-        let RemoveAction = UIAlertAction(title: "Remove Photo", style: .default, handler: {
-            (alert: UIAlertAction!) -> Void in
-            let data = " ".data(using: .utf8)
-            //self.saveImage(image: data! as NSData)
-        })
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             
@@ -284,7 +301,6 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
         
         actionSheet.addAction(cameraAction)
         actionSheet.addAction(LibraryAction)
-        actionSheet.addAction(RemoveAction)
         actionSheet.addAction(cancelAction)
         self.present(actionSheet, animated: true, completion: nil)
     }

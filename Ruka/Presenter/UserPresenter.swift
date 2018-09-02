@@ -16,8 +16,9 @@ class UserPresenter {
     private var userService: UserProtocol
     
     var errorMsg: Observable<String>
+    var profilePicUrl: Observable<String>
     var user: Observable<[User]>
-     var updateMsg: Observable<String>
+    var updateMsg: Observable<String>
     
     
     init() {
@@ -26,7 +27,7 @@ class UserPresenter {
         self.updateMsg  = Observable("")
         self.user  = Observable([])
         self.userService = UserService()
-        
+        self.profilePicUrl = Observable("")
         
     }
     
@@ -54,6 +55,18 @@ class UserPresenter {
                 self.errorMsg.value  = error
             }
         })
+    }
+    
+    func updateProfilePic(imageData: Data) {
+        self.userService.updateProfilePic(imageData: imageData) { (results) in
+            switch (results) {
+            case .Success(let result):
+                self.profilePicUrl.value  = result
+                self.errorMsg.value  = ""
+            case .Failure(let error):
+                self.errorMsg.value  = error
+            }
+        }
     }
     
 }
