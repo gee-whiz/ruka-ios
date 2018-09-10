@@ -8,6 +8,7 @@
 
 import UIKit
 import GrowingTextView
+import GooglePlaces
 
 class AddServiceCell: UITableViewCell , UITextFieldDelegate, UITextViewDelegate{
    
@@ -19,10 +20,11 @@ class AddServiceCell: UITableViewCell , UITextFieldDelegate, UITextViewDelegate{
     @IBOutlet weak var edtAbout: GrowingTextView!
     override func awakeFromNib() {
         super.awakeFromNib()
-
+       
     }
 
-
+    
+   
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
@@ -33,3 +35,6 @@ class AddServiceCell: UITableViewCell , UITextFieldDelegate, UITextViewDelegate{
         return false
     }
 }
+
+
+

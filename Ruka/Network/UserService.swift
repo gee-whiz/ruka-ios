@@ -54,6 +54,7 @@ class UserService: UserProtocol {
             "Content-Type": "application/json; charset=utf-8"
         ]
         let url = "\(GET_PROFILE_URL)\(AuthenticationService.instance.userEmail)"
+        debugPrint(url)
         Alamofire.request(url, method: .get, parameters: nil
             ,encoding: URLEncoding.default, headers:  BEARER_HEADER).responseJSON { (response) in
                 if response.result.error == nil {

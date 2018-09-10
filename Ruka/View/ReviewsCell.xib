@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="183" id="KGk-i7-Jjw" customClass="ReviewsCell" customModule="Beauty_Cart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="495" height="223"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="495" height="222.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJf-Np-5h6" customClass="CardView" customModule="Beauty_Cart" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="495" height="222.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="fti-g7-NCO" customClass="CircleImage" customModule="Beauty_Cart" customModuleProvider="target">
+                                <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="K6f-zQ-Rs4"/>
+                                    <constraint firstAttribute="width" constant="50" id="by7-5k-saD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Georg Kapoya" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxc-hA-3WY">
+                                <rect key="frame" x="66" y="24.5" width="296" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
+                                <color key="textColor" red="0.23921568630000001" green="0.13725490200000001" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4L-97-42G" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="376" y="18" width="111" height="24"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="DS3-1X-5vf"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7u8-6a-0QI">
+                                <rect key="frame" x="16" y="106" width="463" height="21"/>
+                                <mutableString key="text">I had half a head of highlights and haircut both by Lauren at the Ashby Salon. I have a widows peak at the front of my hairline which is sometimes difficult to highlight and have walked out of salons before without hairdressers catching it right. I can honestly say Lauren did a fantastic job, probably the best set of highlights I have every had. It looks so natural and she gave great advice on toners, treatments and haircut options. Really lovely people. Would highly recommend and will definitely go back from now on. Thanks again Lauren.</mutableString>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Fantastic!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CU-eo-ayI">
+                                <rect key="frame" x="16" y="77" width="66" height="21"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
+                                <color key="textColor" red="0.23921568630000001" green="0.13725490200000001" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7u8-6a-0QI" firstAttribute="top" secondItem="2CU-eo-ayI" secondAttribute="bottom" constant="8" id="3w5-Pa-9oX"/>
+                            <constraint firstAttribute="trailing" secondItem="7u8-6a-0QI" secondAttribute="trailing" constant="16" id="Dz4-Ig-rAC"/>
+                            <constraint firstAttribute="trailing" secondItem="x4L-97-42G" secondAttribute="trailing" constant="18" id="EJC-yz-19M"/>
+                            <constraint firstItem="Jxc-hA-3WY" firstAttribute="centerY" secondItem="fti-g7-NCO" secondAttribute="centerY" id="HYK-n7-BtN"/>
+                            <constraint firstAttribute="bottom" secondItem="7u8-6a-0QI" secondAttribute="bottom" constant="32" id="OrC-d8-k7u"/>
+                            <constraint firstItem="2CU-eo-ayI" firstAttribute="leading" secondItem="lJf-Np-5h6" secondAttribute="leading" constant="16" id="QHF-ct-KHQ"/>
+                            <constraint firstItem="7u8-6a-0QI" firstAttribute="leading" secondItem="lJf-Np-5h6" secondAttribute="leading" constant="16" id="SNs-rZ-0uj"/>
+                            <constraint firstItem="2CU-eo-ayI" firstAttribute="top" secondItem="fti-g7-NCO" secondAttribute="bottom" constant="16" id="e3a-fn-W7G"/>
+                            <constraint firstItem="fti-g7-NCO" firstAttribute="top" secondItem="lJf-Np-5h6" secondAttribute="top" constant="8" id="jCp-ra-ifE"/>
+                            <constraint firstItem="x4L-97-42G" firstAttribute="centerY" secondItem="fti-g7-NCO" secondAttribute="centerY" id="jY1-9D-kJf"/>
+                            <constraint firstItem="x4L-97-42G" firstAttribute="leading" secondItem="Jxc-hA-3WY" secondAttribute="trailing" constant="4" id="m9g-Cy-h3q"/>
+                            <constraint firstItem="Jxc-hA-3WY" firstAttribute="leading" secondItem="fti-g7-NCO" secondAttribute="trailing" constant="8" id="tHJ-cU-geE"/>
+                            <constraint firstItem="fti-g7-NCO" firstAttribute="leading" secondItem="lJf-Np-5h6" secondAttribute="leading" constant="8" id="tSc-EG-Coh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lJf-Np-5h6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7ZA-Nx-m6Q"/>
+                    <constraint firstItem="lJf-Np-5h6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IAD-8Q-dM6"/>
+                    <constraint firstAttribute="trailing" secondItem="lJf-Np-5h6" secondAttribute="trailing" id="Zhq-yd-7Cp"/>
+                    <constraint firstAttribute="bottom" secondItem="lJf-Np-5h6" secondAttribute="bottom" id="joS-Om-Nye"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgProfile" destination="fti-g7-NCO" id="Lzz-yH-F96"/>
+                <outlet property="lblName" destination="Jxc-hA-3WY" id="Yg6-YR-gge"/>
+                <outlet property="lblText" destination="7u8-6a-0QI" id="fXs-qy-EK5"/>
+                <outlet property="lblTitle" destination="2CU-eo-ayI" id="kQw-V8-hbt"/>
+                <outlet property="rattingView" destination="x4L-97-42G" id="XYB-CX-cal"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="120.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="avatar_placeholder" width="166" height="166"/>
+    </resources>
+</document>

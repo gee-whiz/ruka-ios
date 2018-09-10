@@ -20,6 +20,8 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     var serviceList = [Service]()
+    var filteredService = [Service]()
+    var category: Category!
     var activityIndicator = UIActivityIndicatorView()
      var searchController = UISearchController()
      private let refreshControl = UIRefreshControl()
@@ -39,10 +41,12 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         screenHeight = self.screenSize.height
          self.activityIndicator.startAnimating()
          self.presenter = ServicePresenter()
-         self.presenter?.getAllService()
+         self.presenter?.getAllService(categoryId: self.category._id)
+         self.addRefreshControll()
          self.collectionView.emptyDataSetView { (view) in
             view.isScrollAllowed(true)
          }
+         self.setupView()
     }
 
   
@@ -67,10 +71,17 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         }
     }
     
+    
+    
+    override  func viewWillAppear(_ animated: Bool) {
+       self.title  = self.category.name
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
   
-               self.setupView()
+        
 
     }
     
@@ -83,7 +94,7 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     }
     
     @objc func refreshService() {
-         self.presenter?.getAllService()
+         self.presenter?.getAllService(categoryId: self.category._id)
     }
     
     
@@ -112,26 +123,37 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if self.searchController.isActive {
+           return self.filteredService.count
+        }
         return self.serviceList.count
     }
     
     
   
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         self.service  = self.serviceList[indexPath.row]
+         if self.searchController.isActive {
+           self.service  = self.filteredService[indexPath.row]
+         }else{
+             self.service  = self.serviceList[indexPath.row]
+        }
         self.performSegue(withIdentifier: "showDetail", sender: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as!  ExploreCell
         cell.layer.masksToBounds = false
-        let item = self.serviceList[indexPath.row]
-        cell.lblTime.text  = item.available_time
-        cell.lblPrice.text  = item.price
-        cell.lblLocation.text  = item.address
-        cell.imgService.sd_setImage(with: URL(string: item.image_uri), placeholderImage: UIImage(named: "coming_soon"))
+        if self.searchController.isActive {
+            self.service = self.filteredService[indexPath.row]
+        }else{
+            self.service = self.serviceList[indexPath.row]
+        }
+        cell.lblTime.text  = self.service .available_time
+        cell.lblPrice.text  = self.service .price.convertCurrency()
+        cell.lblLocation.text  = self.service .address
+        cell.imgService.sd_setImage(with: URL(string: self.service .image_uri), placeholderImage: UIImage(named: "coming_soon"))
         cell.imgService.roundTop(radius: 3.0)
-        cell.lblName.text  = item.name
+        cell.lblName.text  = self.service.name
         return cell
     }
     
@@ -147,7 +169,7 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         let attributes = [
             NSAttributedStringKey.font:  UIFont.boldSystemFont(ofSize: 18.0)
         ]
-        return  NSAttributedString(string:  "Explore Stylists", attributes: attributes )
+        return  NSAttributedString(string:  "Explore \(self.category.name!)", attributes: attributes )
     }
     
     
@@ -155,7 +177,7 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         let attributes = [
             NSAttributedStringKey.font:  UIFont.systemFont(ofSize: 14)
         ]
-        return  NSAttributedString(string:  "No Stylists found in your area at the moment", attributes: attributes )
+        return  NSAttributedString(string:  "No \(self.category.name!) found in your area at the moment.", attributes: attributes )
         
      
     }
@@ -178,12 +200,12 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         
     }
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        self.presenter?.getAllService()
+    private func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        //self.searchController.isActive = false
+     
     }
-    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.presenter?.getAllService()
+      self.presenter?.getAllService(categoryId: self.category._id)
         self.collectionView.reloadData()
         self.searchController.searchBar.text = ""
          self.searchController.searchBar.resignFirstResponder()
@@ -193,35 +215,60 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         self.searchController.searchBar.text = ""
         self.searchController.searchBar.resignFirstResponder()
         self.searchController.isActive = false
+        self.searchController.searchBar.endEditing(true)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText != "" {
-            let matchingGroups = self.serviceList.filter{($0.name?.lowercased().contains(searchText.lowercased()))! }
-            self.serviceList = matchingGroups
-            self.collectionView.reloadData()
-        }else{
-            //self.serviceList.removeAll()
-            self.presenter?.getAllService()
-            self.collectionView.reloadData()
+        self.filteredService = self.serviceList.filter({ (service : Service) -> Bool in
+            let searchName: NSString = "\(service.name.lowercased())" as NSString
+            let range = searchName.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+            return range.location != NSNotFound
+        })
+        if(self.filteredService.count == 0){
+            self.searchController.isActive = false
+        } else {
+            self.searchController.isActive = true
+            
         }
         
+        self.collectionView?.reloadData()
+        self.collectionView.collectionViewLayout.invalidateLayout()
+        self.collectionView.layoutSubviews()
     }
     
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let  height = scrollView.frame.size.height
+        let contentYoffset = scrollView.contentOffset.y
+        let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+        if distanceFromBottom < height {
+            self.searchController.isActive = false
+            self.searchController.searchBar.resignFirstResponder()
+            self.searchController.searchBar.text = ""
+
+               self.presenter?.getAllService(categoryId: self.category._id)
+        }
+    }
     func setupView() {
         if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-            self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
             self.navigationItem.searchController = self.searchController
+            let top = self.collectionView.adjustedContentInset.top
+            let y = self.refreshControl.frame.maxY + top
+            self.collectionView.setContentOffset(CGPoint(x: 0, y: -y), animated:true)
+            
             
         } else {
             // Fallback on earlier versions
         }
-        
         self.searchController = UISearchController(searchResultsController: nil)
         self.searchController.searchBar.delegate  = self
+        guard let navigationController = navigationController else { return }
+        navigationController.view.backgroundColor = .white
+        self.automaticallyAdjustsScrollViewInsets = false
         self.searchController.searchBar.tintColor  = #colorLiteral(red: 0.3082081974, green: 0.1841563582, blue: 0.1004526243, alpha: 1)
-        self.searchController.searchBar.barTintColor = #colorLiteral(red: 0.3082081974, green: 0.1841563582, blue: 0.1004526243, alpha: 1)
+        definesPresentationContext = true
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        
         if #available(iOS 11.0, *) {
             self.navigationItem.searchController = self.searchController
         } else {
@@ -232,6 +279,7 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         } else {
             // Fallback on earlier versions
         }
+        
         
     }
     

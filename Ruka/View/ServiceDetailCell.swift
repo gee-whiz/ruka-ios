@@ -29,16 +29,25 @@ class ServiceDetailCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    var callShare: (() -> ())?
+    var callEmail: (() -> ())?
+    var callPhone: (() -> ())?
+    
+    
     @IBAction func btnCallTapped(_ sender: Any) {
+        self.callPhone!()
     }
     
     @IBAction func btnDiretionTapped(_ sender: Any) {
+        self.callShare!()
     }
     
     
     @IBAction func btnEmailTapped(_ sender: Any) {
+        self.callEmail!()
     }
+    
     
 }
 

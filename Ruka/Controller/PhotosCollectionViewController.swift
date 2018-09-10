@@ -23,6 +23,8 @@ class PhotosCollectionViewController: UIViewController
     var activityIndicator = UIActivityIndicatorView()
     var images = [UIImage]()
     var data = [DynamicField]()
+    var latitude: String!
+    var longitude: String!
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,7 @@ class PhotosCollectionViewController: UIViewController
         self.collectionView.emptyDataSetView { (view) in
             view.isScrollAllowed(true)
         }
-        
+        debugPrint(self.longitude)
     
     }
 
@@ -187,8 +189,8 @@ class PhotosCollectionViewController: UIViewController
         }
     }
     
-    func addService(imageUrl: String) {
-           self.presenter?.addService(name: self.data[0].value, price: self.data[2].value, address: self.data[3].value, latitude: 0, longitude: 0, phone: self.data[5].value, description: self.data[6].value, email: self.data[4].value, image_uri: imageUrl, available_time: self.data[1].value)
+    func addService(imageUrl: String) {       
+        self.presenter?.addService(name: self.data[0].value,category: self.data[1].value, price: self.data[3].value, address: self.data[4].value, latitude: Double(self.latitude)!, longitude: Double(self.longitude)! , phone: self.data[6].value, description: self.data[7].value, email: self.data[5].value, image_uri: imageUrl, available_time: self.data[2].value)
     }
     
 }

@@ -11,16 +11,19 @@ import Foundation
 
 struct Service {
     
-    public private(set)  var _id: String!
-    public private(set)  var name: String!
-    public private(set)  var price: String!
-    public private(set)  var address: String!
-    public private(set)  var latitude: String!
-    public private(set)  var email_address: String!
-    public private(set)  var phone: String!
-    public private(set)  var service_description: String!
-    public private(set)  var image_uri: String!
-    public private(set)  var available_time: String!
+    public   var _id: String!
+    public   var name: String!
+    public   var price: String!
+    public   var address: String!
+    public   var latitude: String!
+    public   var longitude: String!
+    public   var email_address: String!
+    public   var phone: String!
+    public   var service_description: String!
+    public   var image_uri: String!
+    public   var available_time: String!
+    public   var categoryId: String!
 
     
+   
 }

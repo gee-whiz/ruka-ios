@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MessageUI
 
-class ServiceDetail: UIViewController,  UITableViewDelegate, UITableViewDataSource {
+class ServiceDetail: UIViewController,  UITableViewDelegate,MFMailComposeViewControllerDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
     var service: Service!
+    var reviewList = [Review]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
@@ -26,13 +28,30 @@ class ServiceDetail: UIViewController,  UITableViewDelegate, UITableViewDataSour
       
         let headerView: ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderView(with: imageView.image, for: CGSize(width: self.tableView.frame.size.width, height: self.tableView.frame.size.height / 2)) as! ParallaxHeaderView
         self.tableView.tableHeaderView = headerView
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = false
-        } else {
-            // Fallback on earlier versions
+        self.tableView.register(UINib(nibName: "ReviewsCell", bundle: nil), forCellReuseIdentifier: "ReviewsCell")
+        self.presenter = ServicePresenter()
+        self.presenter?.getReviews(serviceId: self.service._id)
+        
+    }
+    
+    
+    var presenter: ServicePresenter? {
+        didSet {
+            presenter?.review.observe {
+                [unowned self] (results) in
+                self.reviewList = results.count > 0 ? results : []
+                self.tableView.reloadData()
+
+                
+            }
+            presenter?.errorMsg.observe { (error) in
+                self.view.setNeedsLayout()
+                if error.count > 0 {
+
+                }
+                
+            }
         }
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,13 +59,7 @@ class ServiceDetail: UIViewController,  UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
-    override  func viewWillDisappear(_ animated: Bool) {
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-        } else {
-            // Fallback on earlier versions
-        }
-    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         self.title  = self.service.name
@@ -54,10 +67,14 @@ class ServiceDetail: UIViewController,  UITableViewDelegate, UITableViewDataSour
 
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if section == 2 {
+            return self.reviewList.count
+        }
         return  1
     }
     
@@ -66,18 +83,37 @@ class ServiceDetail: UIViewController,  UITableViewDelegate, UITableViewDataSour
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceDetailCell", for: indexPath) as! ServiceDetailCell
             cell.layer.masksToBounds = false
+            cell.callEmail = {
+                self.sendEmail(email: self.service.email_address, subject: self.service.name)
+            }
             
+            cell.callPhone = {
+                self.service.phone.makeACall()
+            }
+            
+            cell.callShare = {
+                let text = "Please check out this: \n\n\(self.service.service_description!) \n\n Email: \(self.service.email_address!)"
+                self.displayShareSheet(shareContent: text)
+            }
             cell.lblname.text = self.service.name
-            cell.lblPrice.text  = self.service.price
+            cell.lblPrice.text  = self.service.price.convertCurrency()
                return cell
         }else if indexPath.section == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "seviceDescriiption", for: indexPath) as! ServiceDetailCell
              cell.layer.masksToBounds = false
             cell.lblLocation.text  = self.service.address
             cell.lblServiceDescription.text = self.service.service_description
-      
-            
               return cell
+        }else if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewsCell", for: indexPath) as! ReviewsCell
+            let review  = self.reviewList[indexPath.row]
+            cell.lblName.text = review.user_name
+            cell.lblTitle.text  = review.title
+            cell.lblText.text  = review.text
+            cell.rattingView.rating  = review.rattings as! Double
+            
+            return  cell
+            
         }
      
       return UITableViewCell()
@@ -90,24 +126,46 @@ class ServiceDetail: UIViewController,  UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 1 {
             return 8
-        }else{
-            return 0
+        }else {
+            return UITableViewAutomaticDimension
         }
     }
     
-//    
-//    @IBAction func btnChatTapped(_ sender: Any) {
-//        if !(AuthenticationService.instance.isLoggedIn) {
-//            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//            let   vc = storyboard.instantiateViewController(withIdentifier: "LoginController")
-//            self.present(vc, animated: true, completion: nil)
-//        }else{
-//            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//            let   vc = storyboard.instantiateViewController(withIdentifier: "ChatVC")
-//            self.revealViewController().setFront(vc, animated: true)
-//        }
-//     
-//    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 2 {
+            return "\(self.reviewList.count) Reviews"
+        }
+        return ""
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let headerView = view as? UITableViewHeaderFooterView
+        headerView?.backgroundColor = UIColor.white
+        headerView?.textLabel?.textColor = #colorLiteral(red: 0.3082081974, green: 0.1841563582, blue: 0.1004526243, alpha: 1)
+    }
+
+    // MARK: - sent email
+    func sendEmail(email: String, subject: String) {
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        if !MFMailComposeViewController.canSendMail() {
+            return
+        }else{
+            composeVC.setToRecipients([email])
+            composeVC.setSubject(subject)
+            composeVC.setMessageBody("", isHTML: false)
+            present(composeVC, animated: false, completion: nil)
+        }
+        
+    }
+    func displayShareSheet(shareContent:String) {
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: {})
+    }
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
     
     
     func  scrollViewDidScroll(_ scrollView: UIScrollView) {
