@@ -73,7 +73,7 @@ class FavouriteVC: UIViewController,EmptyDataSetSource, EmptyDataSetDelegate, UI
     
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let attributes = [
-            NSAttributedStringKey.font:  UIFont.boldSystemFont(ofSize: 18.0)
+            NSAttributedString.Key.font:  UIFont.boldSystemFont(ofSize: 18.0)
         ]
         return  NSAttributedString(string:  "Favourites", attributes: attributes )
     }
@@ -81,7 +81,7 @@ class FavouriteVC: UIViewController,EmptyDataSetSource, EmptyDataSetDelegate, UI
     
     func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let attributes = [
-            NSAttributedStringKey.font:  UIFont.systemFont(ofSize: 14)
+            NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 14)
         ]
         return  NSAttributedString(string:  "You can tap the heart on the Home screen to start saving your favourites Stylists.", attributes: attributes )
         

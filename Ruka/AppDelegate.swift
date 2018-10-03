@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-import FBSDKLoginKit
+
 import IQKeyboardManagerSwift
 import GooglePlaces
 import GoogleMaps
@@ -19,13 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-         FBSDKLoginButton.superclass()
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
           IQKeyboardManager.shared.enable = true
         GMSPlacesClient.provideAPIKey("AIzaSyBa2lrngQdv5ljnNAFenDMxKgtaMkVJ3l4")
         GMSServices.provideAPIKey("AIzaSyBa2lrngQdv5ljnNAFenDMxKgtaMkVJ3l4")
         Connectivity.startMonitoringNetwork()
-            return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+            return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

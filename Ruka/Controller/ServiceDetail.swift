@@ -18,7 +18,7 @@ class ServiceDetail: UIViewController,  UITableViewDelegate,MFMailComposeViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight =  self.view.frame.height + 50
         let imageView = UIImageView()
         imageView.frame  = CGRect(x: 0, y: 0, width: self.tableView.frame.size.height, height: 300)
@@ -120,14 +120,14 @@ class ServiceDetail: UIViewController,  UITableViewDelegate,MFMailComposeViewCon
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  UITableViewAutomaticDimension
+        return  UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 1 {
             return 8
         }else {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         }
     }
     

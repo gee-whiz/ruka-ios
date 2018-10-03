@@ -7,19 +7,18 @@
 //
 
 import UIKit
-import FacebookLogin
-import FBSDKLoginKit
+
 
 class LoginController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+
     var activityIndicator = UIActivityIndicatorView()
     override func viewDidLoad() {
         super.viewDidLoad()
          self.setupView()
         self.presenter = AuthenticationPresenter()
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight =  self.view.frame.height
      
     }
@@ -60,7 +59,7 @@ class LoginController: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  UITableViewAutomaticDimension
+        return  UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -77,7 +77,7 @@ open class FloatingLabelTextField: UITextField { // swiftlint:disable:this type_
         if let placeholder = placeholder, let font = placeholderFont ?? font {
             attributedPlaceholder = NSAttributedString(
                 string: placeholder,
-                attributes: [NSAttributedStringKey.foregroundColor: placeholderColor, NSAttributedStringKey.font: font]
+                attributes: [NSAttributedString.Key.foregroundColor: placeholderColor, NSAttributedString.Key.font: font]
             )
         }
     }
@@ -459,7 +459,7 @@ open class FloatingLabelTextField: UITextField { // swiftlint:disable:this type_
             self.titleLabel.frame = frame
         }
         if animated {
-            let animationOptions: UIViewAnimationOptions = .curveEaseOut
+            let animationOptions: UIView.AnimationOptions = .curveEaseOut
             let duration = isTitleVisible() ? titleFadeInDuration : titleFadeOutDuration
             UIView.animate(withDuration: duration, delay: 0, options: animationOptions, animations: { () -> Void in
                 updateBlock()

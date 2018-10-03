@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import FacebookLogin
-import FBSDKLoginKit
+
 
 class LoginCell: UITableViewCell, UITextFieldDelegate  {
 

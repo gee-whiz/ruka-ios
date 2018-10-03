@@ -25,7 +25,7 @@ class CategoryVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Ca
         NotificationCenter.default.addObserver(self, selector: #selector(checkNetwork), name: NSNotification.Name(rawValue: NETWORKNOTREACHABLE), object: nil)
         self.tableView.delegate = self
         self.tableView.dataSource  = self
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight =  self.view.frame.height
         self.presenter = ServicePresenter()
         self.presenter?.getAllCategories()
@@ -101,7 +101,7 @@ class CategoryVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Ca
         if section == 0 {
             return 0
         }
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

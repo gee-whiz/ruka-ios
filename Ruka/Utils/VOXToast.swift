@@ -211,14 +211,14 @@ public class VOXToast: NSObject {
         messageView.addSubview(messageText)
         
         if textNumberOfLines == 0 {
-            height = max(text.boundingRect(with: CGSize(width: inView.frame.size.width - textPadding * 2, height: .greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: VOXToast.font], context: nil).height + (height - " ".boundingRect(with: CGSize(width: inView.frame.size.width, height: .greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: VOXToast.font], context: nil).height), height)
+            height = max(text.boundingRect(with: CGSize(width: inView.frame.size.width - textPadding * 2, height: .greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: VOXToast.font], context: nil).height + (height - " ".boundingRect(with: CGSize(width: inView.frame.size.width, height: .greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: VOXToast.font], context: nil).height), height)
         }
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(updateFrames), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+//        
+//        NotificationCenter.default.addObserver(self, selector: #selector(updateFrames), name: NSNotification.Name.orientationDidChangeNotification, object: nil)
         
         if position == .top {
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIResponder.keyboardWillShowNotification, object: nil)
+//            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIResponder.keyboardWillHideNotification, object: nil)
         }
         
         if hideOnTap { messageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))) }
@@ -283,7 +283,7 @@ extension VOXToast {
     @objc fileprivate func keyboardWillShow(notification: NSNotification) {
         guard let inView = self.inView else { return }
         
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.messageView.frame.origin.y == 0 && inView.frame.origin.y < 0 {
                 self.messageView.frame.origin.y += keyboardSize.height
             }
@@ -291,7 +291,7 @@ extension VOXToast {
     }
     
     @objc fileprivate func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.messageView.frame.origin.y != 0 {
                 self.messageView.frame.origin.y -= keyboardSize.height
             }

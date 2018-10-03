@@ -9,8 +9,6 @@ target 'Beauty Cart' do
      pod 'Alamofire'
      pod 'SwiftyJSON', '3.1.4'
      pod 'SDWebImage', '4.3.2'
-     pod 'FacebookCore'
-     pod 'FacebookLogin'
      pod 'IQKeyboardManagerSwift'
      pod 'EmptyDataSet-Swift'
      pod 'Cosmos'
@@ -25,5 +23,6 @@ target 'Beauty Cart' do
      pod 'GooglePlaces'
      pod 'GooglePlacePicker'
      pod 'GoogleMaps'
+     pod 'FaveButton', '~> 2.0.3'
      
 end

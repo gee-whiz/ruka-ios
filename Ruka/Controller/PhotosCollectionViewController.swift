@@ -159,7 +159,7 @@ class PhotosCollectionViewController: UIViewController
     
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let attributes = [
-            NSAttributedStringKey.font:  UIFont.boldSystemFont(ofSize: 18.0)
+            NSAttributedString.Key.font:  UIFont.boldSystemFont(ofSize: 18.0)
         ]
         return  NSAttributedString(string:  "Add Photos", attributes: attributes )
     }
@@ -167,7 +167,7 @@ class PhotosCollectionViewController: UIViewController
     
     func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let attributes = [
-            NSAttributedStringKey.font:  UIFont.systemFont(ofSize: 14)
+            NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 14)
         ]
         return  NSAttributedString(string:  "Make your Listing more inviting.Tap Add Photos Button.You can always add more photos after you complete your listing", attributes: attributes )
         
@@ -182,7 +182,7 @@ class PhotosCollectionViewController: UIViewController
     @IBAction func btnNextTapped(_ sender: Any) {
         self.activityIndicator.startAnimating()
         if self.images.count > 0 {
-              let image = UIImageJPEGRepresentation(self.images[0], 0.5)! as NSData
+            let image = self.images[0].jpegData(compressionQuality: 0.5)! as NSData
             self.presenter?.uploadImage(imageData: image as Data)
         }else{
             self.addService(imageUrl: "")

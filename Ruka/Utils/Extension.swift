@@ -56,8 +56,8 @@ extension UITextField {
     }
 }
 extension UIActivityIndicatorView {
-    convenience init(activityIndicatorStyle: UIActivityIndicatorViewStyle, color: UIColor, placeInTheCenterOf parentView: UIView) {
-        self.init(activityIndicatorStyle: activityIndicatorStyle)
+    convenience init(activityIndicatorStyle: UIActivityIndicatorView.Style, color: UIColor, placeInTheCenterOf parentView: UIView) {
+        self.init(style: activityIndicatorStyle)
         center = parentView.center
         self.color = #colorLiteral(red: 0.3082081974, green: 0.1841563582, blue: 0.1004526243, alpha: 1)
         parentView.addSubview(self)

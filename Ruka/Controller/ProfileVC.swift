@@ -251,7 +251,7 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
     
     func imageCropViewController(_ controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect, rotationAngle: CGFloat) {
         self.pfImage = croppedImage
-        let data = UIImageJPEGRepresentation(self.pfImage, 0.5)! as NSData
+        let data = self.pfImage.jpegData(compressionQuality: 0.5)! as NSData
         self.saveImage(image: data)
         self.btnDone.isEnabled   = true
         self.imageCropVC.dismiss(animated: true, completion: nil)
@@ -262,17 +262,17 @@ class ProfileVC: UIViewController, UITableViewDelegate,RSKImageCropViewControlle
         self.presenter?.updateProfilePic(imageData: image as Data)
     }
     
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let  cropImage =  info[UIImagePickerControllerOriginalImage]
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let  cropImage =  info[UIImagePickerController.InfoKey.originalImage]
         self.imageCropVC.originalImage  = cropImage as! UIImage
         self.picker.dismiss(animated: true, completion: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.present(self.imageCropVC, animated: false, completion: nil)
         }
-        
     }
     
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.picker.dismiss(animated: true, completion: nil)
     }

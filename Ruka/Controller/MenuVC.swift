@@ -161,9 +161,9 @@ class MenuVC: UIViewController,  UITableViewDelegate, UITableViewDataSource,MFMa
     }
     
     func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default){ action in
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default){ action in
             AuthenticationService.instance.isLoggedIn = false
             AuthenticationService.instance.auth_token = ""
             self.lblName.text = ""

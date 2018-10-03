@@ -115,7 +115,7 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         }
         let attributes: NSAttributedString =
             NSAttributedString(string: "Updating", attributes:
-                [NSAttributedStringKey.foregroundColor : UIColor.white])
+                [NSAttributedString.Key.foregroundColor : UIColor.white])
         refreshControl.attributedTitle = attributes
         refreshControl.addTarget(self, action: #selector(self.refreshService), for: .valueChanged)
     }
@@ -167,7 +167,7 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
 
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let attributes = [
-            NSAttributedStringKey.font:  UIFont.boldSystemFont(ofSize: 18.0)
+            NSAttributedString.Key.font:  UIFont.boldSystemFont(ofSize: 18.0)
         ]
         return  NSAttributedString(string:  "Explore \(self.category.name!)", attributes: attributes )
     }
@@ -175,7 +175,7 @@ class ExploreVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let attributes = [
-            NSAttributedStringKey.font:  UIFont.systemFont(ofSize: 14)
+            NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 14)
         ]
         return  NSAttributedString(string:  "No \(self.category.name!) found in your area at the moment.", attributes: attributes )
         
